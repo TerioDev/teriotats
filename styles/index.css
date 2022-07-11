@@ -31,6 +31,7 @@ body {
 /* WRAPPERS */
 
 .wrapper {
+    height: -webkit-fill-available;
     height: 100vh;
     top: 0;
     width: 100%;
