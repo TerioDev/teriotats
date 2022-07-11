@@ -4,26 +4,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 var view1 = gsap.timeline({});
 
-view1.to(".cast-1-1 img", {opacity: 1, duration: 1.6}, 0.2)
-view1.to(".cast-2-1 img", {opacity: 1, duration: 1.6}, 0.2)
-
-view1.to(".cast-1-2 img", {opacity: 1, duration: 1}, 0.4)
-view1.to(".cast-2-2 img", {opacity: 1, duration: 1}, 0.4)
-
-view1.to(".cast-1-3 img", {opacity: 1, duration: 1}, 0.6)
-view1.to(".cast-2-3 img", {opacity: 1, duration: 1}, 0.6)
-
-view1.to(".cast-1-4 img", {opacity: 1, duration: 1}, 0.8)
-view1.to(".cast-2-4 img", {opacity: 1, duration: 1}, 0.8)
-
-view1.to(".shadow-1 img", {opacity: 1, duration: 0.9}, 1)
-view1.to(".shadow-2 img", {opacity: 1, duration: 0.9}, 1)
+view1.to(".typ2", {opacity: 1, duration: 2,  ease: "power1.out"})
+view1.to(".typ1", {opacity: 0, duration: 1}, "<50%")
 
 view1.fromTo(".divider", {width: 0}, {width: "100%", duration: 1.5, ease: "power3.out"}, 0.8)
 
 view1.fromTo(".navigation", {y: -160}, {y:0, duration: 1.5, ease: "elastic.out(0.8, 0.5)"}, 0.8)
-
-view1.to(".grid", {opacity: 0.8, duration: 0.9}, 0.6)
 
 // OPEN BOOK WINDOW 
 
