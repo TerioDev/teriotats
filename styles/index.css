@@ -31,8 +31,8 @@ body {
 /* WRAPPERS */
 
 .wrapper {
-    height: -webkit-fill-available;
     height: 100vh;
+    height: -webkit-fill-available;
     top: 0;
     width: 100%;
     position: relative;
