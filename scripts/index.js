@@ -20,6 +20,7 @@ $(".book-button").on("click",function(){
     book.to(".book-overlay", {opacity: 1, duration: 0.5}, 0)
     book.to(".book-wrapper", {opacity: 1, duration: 0.5}, 0)
     book.fromTo(".book-window", {scaleX:0.4, scaleY:0.4}, {scaleX:1, scaleY:1, duration: 0.5, ease: "elastic.out(0.8, 1.4)"}, 0)
+    book.fromTo(".x", {opacity: 0}, {opacity:1, duration: 0.6, ease: "power2.out"}, 0.5)
 });
 
 // CLOSE BOOK WINDOW
