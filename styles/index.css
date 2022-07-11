@@ -45,9 +45,8 @@ body {
 }
 
 .overlay {
-    height: 100vh;
-    min-height: -webkit-fill-available;
-    top: 0;
+    height: 100%;
+    bottom: 0;
     width: 100%;
     position: relative;
 }
