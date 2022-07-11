@@ -52,6 +52,12 @@ body {
     position: relative;
 }
 
+.overlay img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
 /* LOGO */
 
 .typography img {
