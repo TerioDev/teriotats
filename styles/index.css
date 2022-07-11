@@ -32,7 +32,7 @@ body {
 
 .wrapper {
     height: 100vh;
-    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
     top: 0;
     width: 100%;
     position: relative;
@@ -46,16 +46,10 @@ body {
 
 .overlay {
     height: 100vh;
-    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
     top: 0;
     width: 100%;
     position: relative;
-}
-
-.overlay img {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
 }
 
 /* LOGO */
