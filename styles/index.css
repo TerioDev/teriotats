@@ -11,6 +11,20 @@ body {
 
 /* TYPOGRAPHY */
 
+.typography img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.typ2l {
+    display: none;
+}
+
+.typ2r {
+    display: none;
+}
+
 .typ2 {
     opacity: 0;
 }
@@ -53,14 +67,6 @@ body {
 
 .overlay img {
     width: 100%;
-}
-
-/* LOGO */
-
-.typography img {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
 }
 
 /* NAVIGATION */
@@ -323,7 +329,67 @@ body {
     bottom: 0;
 }
 
-/* SHADOWS */
+@media only screen and (max-height: 1000px) {
+    /* change typography container to flex to add more elements for larger screens */
+    .typography {
+        width: 100%;
+        height: 55%;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+
+        /* flex */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-end;
+        align-content: flex-end;
+    }
+
+    .typography img {
+        width: auto;
+        max-height: 100%;
+        position: unset;
+        bottom: unset;
+    }
+
+    .typ2r {
+        opacity: 0;
+        display: unset;
+    }
+
+    .typ2l {
+        opacity: 0;
+        display: unset;
+    }
+
+    .typ1 {
+        max-height: 100%;
+        width: auto;
+    }
+    .typography-overlay img {
+        width: auto;
+    }
+
+    .typography-overlay {
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 55%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-end;
+        align-content: flex-end;
+    }
+
+    .divider {
+        height: calc(100vh / 25);
+    }
+}
 
 @media only screen and (max-width: 800px) {
 

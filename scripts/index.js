@@ -5,6 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 var view1 = gsap.timeline({});
 
 view1.to(".typ2", {opacity: 1, duration: 2,  ease: "power1.out"})
+view1.to(".typ2r", {opacity: 1, duration: 2,  ease: "power1.out"}, "<")
 view1.to(".typ1", {opacity: 0, duration: 1}, "<50%")
 
 view1.fromTo(".divider", {width: 0}, {width: "100%", duration: 1.5, ease: "power3.out"}, 0.8)

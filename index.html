@@ -22,10 +22,12 @@
 
     <!-- GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fascinate&family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
 
     <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
@@ -128,11 +130,14 @@
 
         </div>
 
-        <div class="overlay">
-            <div class="typography">
-                <img class="typ1" src="design/typ-top.png">
-                <img class="typ2" src="design/typ-top-shadow.png">
-            </div>
+        <div class="typography-overlay">
+            <img class="typ1" src="design/typ-top.png">
+        </div>
+
+        <div class="typography">
+            <img class="typ2l" src="design/typ-top-shadow-r.png">
+            <img class="typ2" src="design/typ-top-shadow.png">
+            <img class="typ2r" src="design/typ-top-shadow-r.png">
         </div>
 
         <div class="divider"></div>
@@ -160,7 +165,7 @@
     </script>
 
     <script>
-        $('.grid').animate({opacity: 0}, 0).css("background-image", "url(design/sq.png)").delay(800).animate({opacity: 0.8}, 1600);
+        $('.grid').animate({ opacity: 0 }, 0).css("background-image", "url(design/sq.png)").delay(800).animate({ opacity: 0.8 }, 1600);
     </script>
 
     <script>
