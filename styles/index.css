@@ -330,7 +330,7 @@ body {
 }
 
 @media only screen and (max-height: 650px) {
-    /* change typography container to flex to add more elements for larger screens */
+    /* change typography container to flex to add more elements for smaller screens */
     .typography {
         width: 100%;
         height: 55%;

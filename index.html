@@ -175,6 +175,20 @@
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     </script>
 
+    <script>
+        jQuery(function ($) {
+            var windowWidth = $(window).width();
+            var windowHeight = $(window).height();
+
+            $(window).resize(function () {
+                if (windowWidth != $(window).width() || windowHeight != $(window).height()) {
+                    location.reload();
+                    return;
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>
