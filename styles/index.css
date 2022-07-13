@@ -1,5 +1,18 @@
+/* GLOBAL PROPERTIES */
+
 * {
     box-sizing: border-box;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: #f9e2c3;
+    background: #e34e6e;
+}
+
+::selection {
+    color: #f9e2c3;
+    background: #e34e6e;
 }
 
 body {
@@ -7,6 +20,47 @@ body {
     margin: 0;
     width: 100%;
     height: 100%;
+    color: #f9e2c3;
+    font-family: 'Nunito';
+    font-style: normal;
+}
+
+a {
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+a:link {
+    /* unvisited link */
+    color: #ee9199;
+    text-decoration: underline;
+}
+
+
+a:visited {
+    /* visited link */
+    text-decoration: none;
+    color: #ee9199;
+    text-decoration: underline;
+}
+
+
+a:hover {
+    /* mouse over link */
+    color: #ee9199;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+
+a:active {
+    /* selected link */
+    color: #ee9199;
+    text-decoration: underline;
+    font-style: italic;
 }
 
 /* TYPOGRAPHY */
@@ -34,7 +88,7 @@ body {
 .grid {
     background-image: url("../design/sq.png");
     background-size: cover;
-    background-position: center;
+    background-position: center top;
 
     position: absolute;
     width: 100%;
@@ -151,6 +205,17 @@ body {
 
 /* BOOK WINDOW */
 
+.shadow {
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(213, 130, 13, 0.6);
+}
+
 .fixed {
     position: fixed;
     top: 0;
@@ -162,7 +227,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #F89C19;
     z-index: -1;
     opacity: 0;
 
@@ -174,16 +238,11 @@ body {
     align-content: center;
 }
 
-.info-content {
+#info-content {
     width: 70%;
     height: 100%;
     margin-top: calc(100% / 15);
     padding-bottom: calc(100% / 15);
-    text-align: justify;
-    color: #FAE1C3;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 900;
 }
 
 .content1 {
@@ -194,9 +253,8 @@ body {
 
 .book-window {
     background-color: #FAE1C3;
-    width: calc(100% - 60px);
-    height: calc(100% - 60px);
-    border-radius: 60px;
+    width: 100%;
+    height: 100%;
     border: 5px solid #FAE1C3;
     position: relative;
 
@@ -207,9 +265,7 @@ body {
 }
 
 .info {
-    background-color: #2F7C60;
-    border-top-left-radius: 55px;
-    border-bottom-left-radius: 55px;
+    background-color: #3C2606;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -230,7 +286,7 @@ body {
     font-style: normal;
     font-weight: 900;
     font-size: 128px;
-    color: #FAE1C3;
+    width: 100%;
 
     border-bottom: 5px solid #FAE1C3;
 
@@ -243,19 +299,24 @@ body {
 }
 
 .info-header img {
-    max-width: 100%;
-    border-top-left-radius: 120px;
+    width: 100%;
+}
+
+.info-content-line {
+    font-weight: 700;
+    font-size: 22px;
+    padding-top: 20px;
+}
+
+.info-content-line:first-child {
+    padding-top: 0;
 }
 
 .form {
-    background-color: #2F7C60;
-    border-top-right-radius: 55px;
-    border-bottom-right-radius: 55px;
+    background-color: #3C2606;
     position: relative;
-    color: #FAE1C3;
     font-size: 30px;
     overflow-y: scroll;
-    font-family: Nunito;
 }
 
 .x {
@@ -330,6 +391,7 @@ body {
 }
 
 @media only screen and (max-height: 650px) {
+
     /* change typography container to flex to add more elements for smaller screens */
     .typography {
         width: 100%;
@@ -368,6 +430,7 @@ body {
         max-height: 100%;
         width: auto;
     }
+
     .typography-overlay img {
         width: auto;
     }
@@ -411,29 +474,15 @@ body {
 
     /* overflow and border radius change */
     .form {
-        background-color: #2F7C60;
-        border-top-left-radius: 0px;
-        border-top-right-radius: 0px;
-        border-bottom-left-radius: 55px;
-        border-bottom-right-radius: 55px;
-        color: #FAE1C3;
         font-size: 30px;
         overflow-y: unset;
         width: 100%;
-        font-family: Nunito;
     }
 
     /* overflow and border radius change */
     .info {
-        border-top-right-radius: 55px;
-        border-bottom-left-radius: 0;
         overflow-y: initial;
         border-bottom: 5px solid #FAE1C3;
-    }
-
-    /* border radius change */
-    .info-header {
-        border-top-right-radius: 55px;
     }
 
     /* remove a margin unnecesary for mobile */
