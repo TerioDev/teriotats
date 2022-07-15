@@ -92,6 +92,7 @@ a:active {
     width: 100%;
     padding: 0 20px 20px 20px;
     height: calc(100% - 140px);
+    overflow: hidden;
 
     /* flex, center .book-window so the animation is smooth */
     display: flex;
@@ -99,6 +100,13 @@ a:active {
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+
+.book-bg {
+    background-color: #307C60;
+    height: 100%;
+    width: 100%;
+    border-radius: 60px;
 }
 
 .book-window {
@@ -157,6 +165,10 @@ a:active {
     width: 100%;
 }
 
+#info-content {
+    padding: 40px;
+}
+
 .info-content-line {
     font-weight: 700;
     font-size: 22px;
@@ -173,6 +185,7 @@ a:active {
     position: relative;
     font-size: 30px;
     overflow-y: scroll;
+    padding: 40px;
 }
 
 .x {
