@@ -19,6 +19,7 @@
 
     <!-- STYLES -->
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/navigation.css">
 
     <!-- GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,62 +42,7 @@
     <!-- FULL PAGE SHADOW FOR ANIMATION -->
     <div class="shadow"></div>
 
-    <!-- BOOKING WINDOW -->
     <div class="grid"></div>
-
-    <!-- BOOKING WINDOW -->
-    <div class="book-wrapper">
-
-        <div class="book-window">
-
-            <div class="x"><img src="design/x.png"></div>
-
-            <div class="info">
-                <div class="info-header"><img src="design/fill-the-form-img.png"></div>
-                <div id="info-content">
-                    <div class="info-content-line">I will only accept your custom inquiry if I think it's suitable for my style. When ordering a custom, you need to keep in mind that it will be remenistent of my work. I will always notify you about what I think.</div>
-                    <div class="info-content-line">I do both customs and flashes. Whatever you chose, please notify me about that in the form. Making a screenshot or a picture of the design you chose is very helpful.</div>
-                    <div class="info-content-line">All my flashes are uploaded to <a href="https://www.instagram.com/teriotats/">my Instagram</a>.</div>
-                    <div class="info-content-line">Replying to messages is time consuming, so please be patient with me. If you want a custom tattoo I will send you a link to track my orders so you can see how the works is going.</div>
-                    <div class="info-content-line">Before sending a booking request check the <a href="#">rules</a>. Applying is synonymous with accepting them.</div>
-                </div>
-            </div>
-
-            <div class="form">
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-                text <br />
-            </div>
-
-        </div>
-    </div>
 
     <!-- NAVIGATION AFTER SCROLLING DOWN -->
     <div class="navigation-scroll">
@@ -105,30 +51,30 @@
 
     <!-- FIRST VIEW -->
     <div class="wrapper">
-        <div class="navigation">
 
+        <!-- NAVIGATION -->
+        <div id="navigation">
             <!-- turned off for editing 
             <div class="info-button">info</div>
             <div class="info-button">info</div>
             -->
 
-            <div class="book-button">
+                <div class="book-button">
 
-                <div id="eyes">
-                    <div id="eye_l" class='eye'>
-                        <div id='ball_l' class="ball"></div>
+                    <div id="eyes">
+                        <div id="eye_l" class='eye'>
+                            <div id='ball_l' class="ball"></div>
+                        </div>
+
+                        <div id='eye_r' class="eye">
+                            <div id='ball_r' class="ball"></div>
+                        </div>
                     </div>
 
-                    <div id='eye_r' class="eye">
-                        <div id='ball_r' class="ball"></div>
-                    </div>
+                    <img class="book-overlay" src="design/book2.png">
+                    <img src="design/book1.png">
+
                 </div>
-
-                <img class="book-overlay" src="design/book2.png">
-                <img src="design/book1.png">
-
-            </div>
-
         </div>
 
         <div class="typography-overlay">
@@ -142,6 +88,7 @@
         </div>
 
         <div class="divider"></div>
+
     </div>
 
     <!-- SECOND VIEW -->
@@ -158,12 +105,10 @@
     </div> -->
 
     <!-- SCRIPTS -->
-    <script src="scripts/index.js"></script>
+    <script src="scripts/reload-on-resize.js"></script>
     <script src="scripts/eyes.js"></script>
-
-    <script>
-        jQuery(".info-content").fitText(1.22);
-    </script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/book-button-index.js"></script>
 
     <script>
         $('.grid').animate({ opacity: 0 }, 0).css("background-image", "url(design/sq.png)").delay(800).animate({ opacity: 0.8 }, 1600);
@@ -174,20 +119,6 @@
         let vh = window.innerHeight * 0.01;
         // Then we set the value in the --vh custom property to the root of the document
         document.documentElement.style.setProperty('--vh', `${vh}px`);
-    </script>
-
-    <script>
-        jQuery(function ($) {
-            var windowWidth = $(window).width();
-            var windowHeight = $(window).height();
-
-            $(window).resize(function () {
-                if (windowWidth != $(window).width() || windowHeight != $(window).height()) {
-                    location.reload();
-                    return;
-                }
-            });
-        });
     </script>
 
 </body>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#F89C19" />
+
+    <!-- GRAPHIC RESOURCES -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-startup-image" href="">
+    <link rel="icon" href="">
+
+    <title>Terio</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles/book.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+
+    <!-- GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- FONTS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fascinate&family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts/jquery.fittext.js"></script>
+
+</head>
+
+<body>
+
+    <!-- GRID -->
+    <div class="grid"></div>
+
+    <!-- NAVIGATION -->
+    <div id="navigation">
+        <!-- turned off for editing 
+        <div class="info-button">info</div>
+        <div class="info-button">info</div>
+        -->
+
+        <div class="book-button">
+
+            <div id="eyes">
+                <div id="eye_l" class='eye'>
+                    <div id='ball_l' class="ball"></div>
+                </div>
+
+                <div id='eye_r' class="eye">
+                    <div id='ball_r' class="ball"></div>
+                </div>
+            </div>
+
+            <img class="book-overlay" src="design/book2.png">
+            <img src="design/book1.png">
+
+        </div>
+    </div>
+
+    <!-- BOOKING WINDOW -->
+    <div class="book-wrapper">
+
+        <div class="book-window">
+
+            <div class="x"><img src="design/x.png"></div>
+
+            <div class="info">
+                <div class="info-header"><img src="design/fill-the-form-img-green.png"></div>
+                <div id="info-content">
+                    <div class="info-content-line">I will only accept your custom inquiry if I think it's suitable for my style. When ordering a custom, please keep in mind that it will be remenistent of my work. I will always notify you what I think about your idea and if I can adjust it to liking.
+                    </div>
+                    <div class="info-content-line">I do both customs and flashes. Wichever you chose, please notify me
+                        about that in the form. Making a screenshot or a picture of the design you picked is very
+                        helpful.</div>
+                    <div class="info-content-line">All my flashes are uploaded to <a
+                            href="https://www.instagram.com/teriotats/">my IG</a>.</div>
+                    <div class="info-content-line">Replying to messages is time consuming, so please be patient with me.
+                        If you want a custom tattoo I will send you a link to track my orders so you can see how the
+                        works is going.</div>
+                    <div class="info-content-line">Before sending a booking request check the <a href="#">rules</a>.
+                        Applying is synonymous with accepting them.</div>
+                </div>
+            </div>
+
+            <div class="form">
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+                text <br />
+            </div>
+
+        </div>
+    </div>
+
+    <script src="scripts/eyes.js"></script>
+    <script src="scripts/book.js"></script>
+    <script src="scripts/book-button-book.js"></script>
+
+    <script>
+        $('.grid').animate({ opacity: 0 }, 0).css("background-image", "url(design/sq.png)").delay(800).animate({ opacity: 0.8 }, 1600);
+    </script>
+
+</body>
+
+</html>

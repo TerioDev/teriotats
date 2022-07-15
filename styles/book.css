@@ -1,0 +1,274 @@
+/* GLOBAL PROPERTIES */
+
+* {
+    box-sizing: border-box;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: #f9e2c3;
+    background: #e34e6e;
+}
+
+::selection {
+    color: #f9e2c3;
+    background: #e34e6e;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+body {
+    background-color: #F99C19;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    color: #f9e2c3;
+    font-family: 'Nunito';
+    font-style: normal;
+}
+
+a {
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+}
+
+a:link {
+    /* unvisited link */
+    color: #EE9199;
+    text-decoration: underline;
+}
+
+
+a:visited {
+    /* visited link */
+    text-decoration: none;
+    color: #EE9199;
+    text-decoration: underline;
+}
+
+
+a:hover {
+    /* mouse over link */
+    color: #EE9199;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+
+a:active {
+    /* selected link */
+    color: #EE9199;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+/* GRID */
+
+.grid {
+    background-image: url("../design/sq.png");
+    background-size: cover;
+    background-position: center top;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* BOOK */
+
+.book-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 20px 20px 20px;
+    height: calc(100% - 140px);
+
+    /* flex, center .book-window so the animation is smooth */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.book-window {
+    background-color: #F9E2C3;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #F9E2C3;
+    position: relative;
+    border-radius: 60px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 5px;
+}
+
+#info {
+    width: 70%;
+    height: 100%;
+    margin-top: calc(100% / 15);
+    padding-bottom: calc(100% / 15);
+}
+
+.content1 {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 80px;
+}
+
+.info {
+    background-color: #307C60;
+    color: #F9E2C3;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    overflow-y: scroll;
+}
+
+.info-header {
+    width: 100%;
+
+    border-bottom: 5px solid #F9E2C3;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.info-header img {
+    width: 100%;
+}
+
+.info-content-line {
+    font-weight: 700;
+    font-size: 22px;
+    padding-top: 20px;
+}
+
+.info-content-line:first-child {
+    padding-top: 0;
+}
+
+.form {
+    background-color: #307C60;
+    color: #F9E2C3;
+    position: relative;
+    font-size: 30px;
+    overflow-y: scroll;
+}
+
+.x {
+    cursor: pointer;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 100px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.x img {
+    width: 100px;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border-radius: 100px;
+}
+
+/* MINIMIZE */
+
+#minimize {
+    height: 140px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png');
+}
+
+@media only screen and (max-width: 800px) {
+
+#info-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.info-content-line {
+    font-size: 18px;
+}
+
+.book-window {
+    display: block;
+    overflow: auto;
+    width: 100%;
+}
+
+.info {
+    overflow-y: auto;
+    width: 100%;
+    border-bottom: 5px solid #F9E2C3;
+}
+
+.info-header {
+    height: 100%;
+    width: auto;
+
+    display: block;
+
+    grid-area: "header";
+    overflow-y: auto;
+
+    position: static;
+}
+
+.form {
+    background-color: #307C60;
+    color: #F9E2C3;
+    position: static;
+    font-size: 30px;
+    width: 100%;
+    grid-area: "info";
+    overflow-y: auto;
+    display: block;
+
+    margin: 0;
+    padding: 20px;
+}
+
+.x {
+    z-index: 3;
+    position: sticky;
+    top: 5px;
+    right: 5px;
+    width: 80px;
+    float:right;
+}
+
+.x img {
+    width: 80px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+}

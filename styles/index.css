@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
 ::-moz-selection {
     /* Code for Firefox */
     color: #f9e2c3;
@@ -35,7 +42,7 @@ a {
 
 a:link {
     /* unvisited link */
-    color: #ee9199;
+    color: #E34E6E;
     text-decoration: underline;
 }
 
@@ -43,22 +50,21 @@ a:link {
 a:visited {
     /* visited link */
     text-decoration: none;
-    color: #ee9199;
+    color: #E34E6E;
     text-decoration: underline;
 }
 
 
 a:hover {
     /* mouse over link */
-    color: #ee9199;
+    color: #E34E6E;
     text-decoration: underline;
     font-style: italic;
 }
 
-
 a:active {
     /* selected link */
-    color: #ee9199;
+    color: #E34E6E;
     text-decoration: underline;
     font-style: italic;
 }
@@ -121,263 +127,6 @@ a:active {
 
 .overlay img {
     width: 100%;
-}
-
-/* NAVIGATION */
-
-.navigation {
-    /* navigation box */
-    width: 100%;
-    height: 160px;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-
-    /* flex */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    align-content: flex-start;
-    gap: 60px;
-
-    /* align flex items */
-    justify-content: center;
-    /* center for mobile - flex-start for pc */
-}
-
-.info-button {
-    /* button */
-    box-sizing: border-box;
-    width: 300px;
-    height: 120px;
-    background: #FAE1C3;
-    border: 5px solid #3C2606;
-    border-radius: 60px;
-
-    /* font */
-    font-family: 'Fascinate';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 64px;
-    line-height: 110px;
-    color: #3C2606;
-    text-align: center;
-}
-
-.book-button {
-    /* button */
-    box-sizing: border-box;
-    width: 300px;
-    height: 120px;
-    background: #2F7C60;
-    border: 5px solid #FAE1C3;
-    border-radius: 60px;
-    position: relative;
-    cursor: pointer;
-
-    /* font */
-    font-family: 'Fascinate';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 64px;
-    color: #FAE1C3;
-    text-align: center;
-
-    /* flex */
-    /* margin-left: auto; */
-    /* aligns book button to the right for pc - remove for mobile */
-}
-
-.book-button img {
-    height: 110px;
-    width: 270px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.info-button:first-child {
-    margin-left: 60px;
-}
-
-/* BOOK WINDOW */
-
-.shadow {
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: 0;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(213, 130, 13, 0.6);
-}
-
-.fixed {
-    position: fixed;
-    top: 0;
-}
-
-.book-wrapper {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0;
-
-    /* flex, center .book-window so the animation is smooth */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-#info-content {
-    width: 70%;
-    height: 100%;
-    margin-top: calc(100% / 15);
-    padding-bottom: calc(100% / 15);
-}
-
-.content1 {
-    width: 100%;
-    display: inline-block;
-    margin-bottom: 80px;
-}
-
-.book-window {
-    background-color: #FAE1C3;
-    width: 100%;
-    height: 100%;
-    border: 5px solid #FAE1C3;
-    position: relative;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 5px;
-}
-
-.info {
-    background-color: #3C2606;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    align-content: center;
-    overflow-y: scroll;
-}
-
-::-webkit-scrollbar {
-    width: 0;
-    /* Remove scrollbar space */
-    background: transparent;
-    /* Optional: just make scrollbar invisible */
-}
-
-.info-header {
-    font-family: 'Fascinate';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 128px;
-    width: 100%;
-
-    border-bottom: 5px solid #FAE1C3;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-}
-
-.info-header img {
-    width: 100%;
-}
-
-.info-content-line {
-    font-weight: 700;
-    font-size: 22px;
-    padding-top: 20px;
-}
-
-.info-content-line:first-child {
-    padding-top: 0;
-}
-
-.form {
-    background-color: #3C2606;
-    position: relative;
-    font-size: 30px;
-    overflow-y: scroll;
-}
-
-.x {
-    cursor: pointer;
-    z-index: 3;
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 100px;
-}
-
-.x img {
-    width: 100px;
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    border-radius: 100px;
-}
-
-/* BOOK BUTTON */
-
-.book-overlay {
-    opacity: 0;
-    max-height: 110px;
-    max-width: 270px;
-    position: absolute;
-}
-
-#eyes {
-    position: absolute;
-    gap: 3px;
-    width: 290px;
-    height: 112px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: flex-start;
-}
-
-.eye {
-    width: 44px;
-    height: 39px;
-    display: inline-block;
-    position: relative;
-    /* overflow: hidden; */
-    background-image: url('https://i.imgur.com/EvoGbB6.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.ball {
-    width: 12px;
-    height: 22px;
-    background-color: #2f7c60;
-    border-radius: 90px 90px 90px 90px / 140px 140px 140px 140px;
-    position: absolute;
-    top: 50%;
-    left: 75%;
-    transform: translate(-50%, -50%);
 }
 
 /* MISC */

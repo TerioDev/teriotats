@@ -1,0 +1,125 @@
+#navigation {
+    /* navigation box */
+    width: 100%;
+    height: 140px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.shadow {
+    background-color: #F99C19;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.info-button {
+    /* button */
+    box-sizing: border-box;
+    width: 300px;
+    height: 120px;
+    background: #FAE1C3;
+    border: 5px solid #3C2606;
+    border-radius: 60px;
+
+    /* font */
+    font-family: 'Fascinate';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 110px;
+    color: #3C2606;
+    text-align: center;
+}
+
+/* BOOK BUTTON */
+
+.book-overlay {
+    opacity: 0;
+    max-height: 100px;
+    max-width: 300px;
+    position: absolute;
+}
+
+.book-button {
+    /* button */
+    box-sizing: border-box;
+    width: 300px;
+    height: 100px;
+    background: #2F7C60;
+    border: 5px solid #FAE1C3;
+    border-radius: 60px;
+    position: relative;
+    cursor: pointer;
+
+    /* font */
+    text-align: center;
+
+    /* flex */
+    /* margin-left: auto; */
+    /* aligns book button to the right for pc - remove for mobile */
+}
+
+.book-button img {
+    height: 90px;
+    width: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ANIMATED EYES */
+
+#eyes {
+    position: absolute;
+    padding-left: 1px;
+    gap: 3px;
+    width: 290px; /* same as button width without a border */
+    height: 90px; /* modify this when resizing button height */
+
+    /* flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.eye {
+    aspect-ratio: 44 / 39;
+    height: 31px;
+    margin-top: 3px;
+    display: inline-block;
+    position: relative;
+    /* overflow: hidden; */
+    background-image: url('https://i.imgur.com/EvoGbB6.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ball {
+    aspect-ratio: 6 / 11;
+    height: 18px;
+    background-color: #2f7c60;
+    border-radius: 90px 90px 90px 90px / 140px 140px 140px 140px;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+}
