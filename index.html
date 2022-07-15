@@ -106,14 +106,21 @@
     </div> -->
 
     <script>
-        $('.grid').animate({ opacity: 0 }, 0).css("background-image", "url(design/sq.png)").delay(800).animate({ opacity: 0.8 }, 1600);
-    </script>
-
-    <script>
         // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
         let vh = window.innerHeight * 0.01;
         // Then we set the value in the --vh custom property to the root of the document
         document.documentElement.style.setProperty('--vh', `${vh}px`);
+    </script>
+
+    <script>
+        var	tl = new TimelineMax({paused:true, onComplete:tlComplete});
+
+        function tlComplete()
+        {
+            //Redirect to new location
+        }
+
+        $(window).on('unload', function(){tl.seek(0);});
     </script>
 
         <!-- SCRIPTS -->

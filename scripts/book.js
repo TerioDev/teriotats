@@ -116,5 +116,7 @@ function checkRight() {
     }
 }
 
+$('.grid').animate({ opacity: 0 }, 0).css("background-image", "url(design/sq.png)").delay(800).animate({ opacity: 0.8 }, 1600);
+
 // Run it initially
 handleDeviceChange(smallDevice);
