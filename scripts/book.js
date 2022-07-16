@@ -2,7 +2,11 @@ gsap.registerPlugin(ScrollTrigger)
 
 // ON LOAD
 
-gsap.fromTo(".book-wrapper", {opacity: 0}, {opacity: 1, duration: 2})
+var onLoad = gsap.timeline({})
+
+onLoad.fromTo(".book-wrapper", {y: "140px"}, {y: "0px", duration: 0.8, ease: Back.easeOut.config(1.2)}, 0)
+
+onLoad.fromTo(".book-wrapper", {opacity: 0}, {opacity: 1, duration: 1}, 0)
 
 // MINIMIZE TIMELINE
 
@@ -23,11 +27,11 @@ ScrollTrigger.create({
 })
 
 function showX() {
-gsap.to(".x", {opacity: 1, pointerEvents: "auto", zIndex: 6, duration: 1})
+    gsap.to(".x, .x img", {opacity: 1, pointerEvents: "auto", zIndex: 6, duration: 1})
 }
 
 function hideX() {
-    gsap.to(".x", {opacity: 0, pointerEvents: "none", duration: 1})
+    gsap.to(".x, .x img", {opacity: 0, pointerEvents: "none", duration: 1})
 }
 
 // EXPAND TIMELINE
@@ -48,6 +52,8 @@ smallDevice.addListener(handleDeviceChange);
 // state variables
 let left = true;
 let right = true;
+
+// delay
 
 // expand functions
 function handleDeviceChange(e) {

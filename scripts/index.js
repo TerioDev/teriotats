@@ -1,5 +1,13 @@
 gsap.registerPlugin(ScrollTrigger);
 
+$(".book-button").on("click",function(){
+    var book = gsap.timeline({});
+    
+    book.to(".book-overlay", {opacity: 1, duration: 0.2}, 0)
+    book.to(".book-overlay", {opacity: 0, duration: 0.2}, 0.6)
+
+});
+
 $('.grid').animate({ opacity: 0 }, 0).css("background-image", "url(design/sq.png)").delay(800).animate({ opacity: 0.8 }, 1600);
 
 var view1 = gsap.timeline({});
