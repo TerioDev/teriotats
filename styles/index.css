@@ -95,6 +95,7 @@ a:active {
     background-image: url("../design/sq.png");
     background-size: cover;
     background-position: center top;
+    opacity: 0.8;
 
     position: absolute;
     width: 100%;

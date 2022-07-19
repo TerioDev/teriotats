@@ -40,6 +40,9 @@
 
 <body>
 
+    <!-- SHADOW -->
+    <div class="shadow"></div>
+
     <!-- GRID BACKGROUND -->
     <div class="grid"></div>
 
@@ -48,15 +51,20 @@
 
     </div>
 
-    <!-- FIRST VIEW -->
-    <div class="wrapper">
+    <!-- NAVIGATION -->
+    <div id="navigation-wrap">
 
-        <!-- NAVIGATION -->
         <div id="navigation">
-            <!-- turned off for editing 
-            <div class="info-button">info</div>
-            <div class="info-button">info</div>
-            -->
+
+            <div class="menu">
+                <div class="info-button">home</div>
+                <div class="info-button">about</div>
+                <div class="info-button" id="info">
+
+                    <div class="info-text">info</div>
+                    <div class="info-show-less"><img src="design/show-less.png"></div>
+                
+                </div>
 
                 <div class="book-button">
 
@@ -74,7 +82,58 @@
                     <img src="design/book1.png">
 
                 </div>
+            </div>
+
+            <div class="sub-menu">
+                <div class="info-button-sub">info</div>
+                <div class="info-button-sub">home</div>
+                <div class="info-button-sub">about</div>
+            </div>
+
         </div>
+
+    </div>
+
+    <!-- NAVIGATION MOBILE -->
+    <div id="mobile-navigation-wrap">
+
+        <div class="mobile-menu-background"></div>
+
+        <div class="info-button" id="menu">
+            <div class="info-text">menu</div>
+            <div class="info-show-less"><img src="design/show-less.png"></div>
+        </div>
+
+        <div class="info-button-sub-mobile" id="sub1">home</div>
+        <div class="info-button-sub-mobile" id="sub2">about</div>
+        <div class="info-button-sub-mobile" id="sub3">1</div>
+        <div class="info-button-sub-mobile" id="sub4">2</div>
+        <div class="info-button-sub-mobile" id="sub5">3</div>
+        <div class="book-button" id="mobile-book-button">
+            <div class="mbl-book-btn-wrp">
+
+            <div id="eyes">
+                <div id="eye_l" class='eye'>
+                    <div id='ball_l' class="ball"></div>
+                </div>
+
+                <div id='eye_r' class="eye">
+                    <div id='ball_r' class="ball"></div>
+                </div>
+            </div>
+
+            <img class="book-overlay" src="design/book2.png">
+            <img src="design/book1.png">
+
+        </div>
+
+        </div>
+        <!-- <div id="show-less-button">x</div> -->
+
+    </div>
+
+    <!-- FIRST VIEW -->
+    <div class="wrapper">
 
         <div class="typography-overlay">
             <img class="typ1" src="design/typ-top.png">
@@ -111,11 +170,13 @@
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     </script>
 
-        <!-- SCRIPTS -->
-        <script src="scripts/index.js"></script>
-        <script src="scripts/book-button-index.js"></script>
-        <script src="scripts/eyes.js"></script>
-        <script src="scripts/reload-on-resize.js"></script>
+    <!-- SCRIPTS -->
+    <script src="scripts/index.js"></script>
+    <script src="scripts/book-button-index.js"></script>
+    <script src="scripts/eyes.js"></script>
+    <script src="scripts/reload-on-resize.js"></script>
+    <script src="scripts/navigation.js"></script>
 
 </body>
+
 </html>

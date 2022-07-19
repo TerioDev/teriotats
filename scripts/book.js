@@ -37,7 +37,7 @@ function hideX() {
 // EXPAND TIMELINE
 var expand = gsap.timeline({});
 
-expand.to(".book-wrapper", {zIndex: 2, duration: 0}, 0)
+expand.to(".book-wrapper", {zIndex: 12, duration: 0}, 0)
 expand.to(".book-wrapper", {height: "100%", paddingTop: "20px"}, 0)
 
 // EXPAND BOOK WINDOW
