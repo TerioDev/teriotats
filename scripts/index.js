@@ -22,3 +22,4 @@ view1.to(".typ1", {opacity: 0, duration: 1}, 1)
 view1.fromTo(".divider", {width: 0}, {width: "100%", duration: 1.5, ease: "power3.out"}, 0.8)
 
 view1.fromTo("#navigation", {y: -160}, {y:0, duration: 1.5, ease: "elastic.out(0.8, 0.5)"}, 0.8)
+view1.fromTo("#mobile-navigation-wrap", {y: -160}, {y:0, duration: 1.5, ease: "elastic.out(0.8, 0.5)"}, 0.8)

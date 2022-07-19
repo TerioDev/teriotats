@@ -32,6 +32,7 @@
 
     <!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/CSSPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts/jquery.fittext.js"></script>
@@ -60,18 +61,22 @@
 
                 <div class="book-button">
 
-                    <div id="eyes">
-                        <div id="eye_l" class='eye'>
-                            <div id='ball_l' class="ball"></div>
+                    <div class="book-btn-inner">
+
+                        <div id="eyes">
+                            <div id="eye_l" class='eye'>
+                                <div id='ball_l' class="ball"></div>
+                            </div>
+
+                            <div id='eye_r' class="eye">
+                                <div id='ball_r' class="ball"></div>
+                            </div>
                         </div>
 
-                        <div id='eye_r' class="eye">
-                            <div id='ball_r' class="ball"></div>
-                        </div>
+                        <img class="book-overlay" src="design/book2.png">
+                        <img src="design/book1.png">
+
                     </div>
-                    
-                    <img class="book-overlay" src="design/book2.png">
-                    <img src="design/book1.png">
 
                 </div>
             </div>
@@ -89,10 +94,38 @@
     <!-- NAVIGATION MOBILE -->
     <div id="mobile-navigation-wrap">
 
-        <div class="info-button id="menu">
+        <div class="mobile-menu-background"></div>
+
+        <div class="info-button" id="menu">
             <div class="info-text">menu</div>
             <div class="info-show-less"><img src="design/show-less.png"></div>
         </div>
+
+        <div class="info-button-sub-mobile" id="sub1">home</div>
+        <div class="info-button-sub-mobile" id="sub2">about</div>
+        <div class="info-button-sub-mobile" id="sub3">1</div>
+        <div class="info-button-sub-mobile" id="sub4">2</div>
+        <div class="info-button-sub-mobile" id="sub5">3</div>
+        <div class="book-button" id="mobile-book-button">
+            <div class="mbl-book-btn-wrp">
+
+            <div id="eyes">
+                <div id="eye_l" class='eye'>
+                    <div id='ball_l' class="ball"></div>
+                </div>
+
+                <div id='eye_r' class="eye">
+                    <div id='ball_r' class="ball"></div>
+                </div>
+            </div>
+
+            <img class="book-overlay" src="design/book2.png">
+            <img src="design/book1.png">
+
+        </div>
+
+        </div>
+        <!-- <div id="show-less-button">x</div> -->
 
     </div>
 
@@ -148,7 +181,7 @@
                 <div class="form-sub">Both size and place can be adjusted during a session.</div>
 
                 <div class="form-input"><input type="text" id="size" name="size" placeholder="Size~ in CM*"></div>
-                <div class="form-sub">If you're not sure, type that in and I'll help you pick. :)</div>
+                <div class="form-sub">Not sure? Type that in and I'll help you pick. :)</div>
 
                 <div id="discard"><img src="design/x.png"></div>
 

@@ -1,26 +1,19 @@
 /* GLOBAL PROPERTIES */
 
-* {
-    box-sizing: border-box;
-}
+* {box-sizing: border-box;}
 
-::-moz-selection {
-    /* Code for Firefox */
-    color: #f9e2c3;
-    background: #e34e6e;
-}
+a:link {color: #F99C19; text-decoration: underline;}
+a:visited {text-decoration: none; color: #F99C19; text-decoration: underline;}
+a:hover {color: #F99C19; text-decoration: underline; font-style: italic;}
+a:active {color: #F99C19; text-decoration: underline; font-style: italic;}
 
-::selection {
-    color: #f9e2c3;
-    background: #e34e6e;
-}
+::-moz-selection {/* Code for Firefox */ color: #f9e2c3; background: #e34e6e;}
 
-::-webkit-scrollbar {
-    width: 0;
-    /* Remove scrollbar space */
-    background: transparent;
-    /* Optional: just make scrollbar invisible */
-}
+::selection {color: #f9e2c3; background: #e34e6e;}
+
+::-webkit-scrollbar {width: 0; /* Remove scrollbar space */ background: transparent; /* Optional: just make scrollbar invisible */}
+
+a {-o-transition: .5s; -ms-transition: .5s; -moz-transition: .5s; -webkit-transition: .5s; transition: .5s;}
 
 body {
     background-color: #F99C19;
@@ -31,45 +24,17 @@ body {
     font-family: 'Encode Sans', sans-serif;
 }
 
-a {
-    -o-transition: .5s;
-    -ms-transition: .5s;
-    -moz-transition: .5s;
-    -webkit-transition: .5s;
-    transition: .5s;
-}
+/* INPUT STYLES */
 
-a:link {
-    /* unvisited link */
-    color: #F99C19;
-    text-decoration: underline;
-}
+input::placeholder, textarea::placeholder {color: #CB9E69;}
 
+input, select, textarea{color: #F99C19;}
 
-a:visited {
-    /* visited link */
-    text-decoration: none;
-    color: #F99C19;
-    text-decoration: underline;
-}
+textarea:focus, input:focus {color: #F99C19;}
 
+input, select, textarea{color: #F99C19;}
 
-a:hover {
-    /* mouse over link */
-    color: #F99C19;
-    text-decoration: underline;
-    font-style: italic;
-}
-
-
-a:active {
-    /* selected link */
-    color: #F99C19;
-    text-decoration: underline;
-    font-style: italic;
-}
-
-/* GRID */
+/* BACKGROUND GRID */
 
 .grid {
     background-image: url("../design/sq.png");
@@ -94,6 +59,7 @@ a:active {
     height: calc(100% - 140px);
     overflow: hidden;
     opacity: 0;
+    z-index: 10;
 
     /* flex, center .book-window so the animation is smooth */
     display: flex;
@@ -118,13 +84,6 @@ a:active {
     gap: 0px 0px;
 }
 
-/* #info {
-    width: 70%;
-    height: 100%;
-    margin-top: calc(100% / 15);
-    padding-bottom: calc(100% / 15);
-} */
-
 .content1 {
     width: 100%;
     display: inline-block;
@@ -148,23 +107,11 @@ a:active {
     border-bottom: 5px solid #F9E2C3;
     font-family: fascinate;
     color: #F99C19;
-    
-/*     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center; */
 }
 
+.info-header img {width: 100%;}
 
-.info-header img {
-    width: 100%;
-}
-
-#info-content {
-    padding: 40px 60px 40px 60px;
-}
+#info-content {padding: 40px 60px 40px 60px;}
 
 .info-content-line {
     font-weight: 700;
@@ -173,9 +120,7 @@ a:active {
     padding-top: 20px;
 }
 
-.info-content-line:first-child {
-    padding-top: 0;
-}
+.info-content-line:first-child {padding-top: 0;}
 
 .x {
     cursor: pointer;
@@ -220,9 +165,7 @@ a:active {
     /* font-style: italic; */
 }
 
-.form-title {
-    font-family: fascinate;
-}
+.form-title {font-family: fascinate;}
 
 #idea {
     height: 210px;
@@ -266,7 +209,6 @@ input[type=file] {
     height: 200px;
     border: 0px;
     border-radius: 40px;
-    background-color: #f9e2c3;
     padding: 0;
     margin: 40px 0 10px 0;
     font-family: 'Encode Sans', sans-serif;
@@ -296,9 +238,7 @@ input[type=file] {
     resize: none;
 }
 
-input[type="file"] {
-    display: none;
-}
+input[type="file"] {display: none;}
 
 .inspo {
     margin: 40px 0 10px 0;
@@ -336,9 +276,7 @@ input[type="file"] {
     cursor: pointer;
 }
 
-#discard:hover {
-    background-color: #F99C19;
-}
+#discard:hover {background-color: #F99C19;}
 
 .inspo-inner {
     display: flex;
@@ -350,13 +288,9 @@ input[type="file"] {
     overflow: hidden;
 }
 
-.inspo-text-2 {
-    padding: 5px 0 0px 0;
-}
+.inspo-text-2 {padding: 5px 0 0px 0;}
 
-.inspo-text-2:last-child {
-    padding: 5px 0 10px 0;
-}
+.inspo-text-2:last-child {padding: 5px 0 10px 0;}
 
 .inspo-text-3 {
     color:#F9E2C3;
@@ -372,41 +306,38 @@ input[type="file"] {
     width: 140px;
 }
 
-#name {
-    margin-top: 10px;
-}
-
-input::placeholder, textarea::placeholder {
-    color: #CB9E69;
-  }
-
-input, select, textarea{
-    color: #F99C19;
-}
-
-textarea:focus, input:focus {
-    color: #F99C19;
-}
-
-input, select, textarea{
-    color: #F99C19;
-}
+#name {margin-top: 10px;}
 
 @media only screen and (max-width: 800px) {
 
+    /* FORM */
+
+    .form {
+        background-color: #307C60;
+        color: #F9E2C3;
+        position: static;
+        font-size: 30px;
+        width: 100%;
+        overflow-y: auto;
+        display: block;
+        border-left: 0px;
+        margin: 0;
+        padding: 14px 24px 14px 24px;
+
+        grid-area: "info";
+    }
+
     /* zoom in the background on smaller devices */
-    .grid {
-        background-size: 200%;
-    }
 
-    #info-content {
-        padding: 30px 24px 30px 24px;
-        text-align: center;
-    }
+    .grid {background-size: 200%;}
 
-    .info-content-line {
-        font-size: 14px;
-    }
+    /* extend book wrapper up when navbar is smaller to fill the space*/
+
+    .book-wrapper {height: calc(100% - 120px);}
+
+    #info-content {padding: 20px 24px 20px 24px; text-align: center;}
+
+    .info-content-line {font-size: 16px;}
 
     .book-window {
         display: block;
@@ -424,30 +355,26 @@ input, select, textarea{
     .info-header {
         height: 100%;
         width: auto;
-
         padding: 10px;
-
         display: block;
+        overflow-y: auto;
+        position: static;
 
         grid-area: "header";
-        overflow-y: auto;
-
-        position: static;
     }
 
-    .form {
-        background-color: #307C60;
-        color: #F9E2C3;
-        position: static;
-        font-size: 30px;
-        width: 100%;
-        grid-area: "info";
-        overflow-y: auto;
-        display: block;
-        border-left: 0px;
+    /* DISCARD */
 
-        margin: 0;
-        padding: 30px 40px 30px 40px;
+    #discard {
+        right: 40px;
+        position: absolute;
+        border-radius: 100px;
+        font-size: 0;
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        margin-top: 55px;
+        cursor: pointer;
     }
 
     .x {
@@ -458,7 +385,7 @@ input, select, textarea{
         width: 60px;
         float: right;
     }
-
+    
     .x img {
         width: 60px;
         position: absolute;

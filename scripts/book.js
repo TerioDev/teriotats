@@ -37,7 +37,7 @@ function hideX() {
 // EXPAND TIMELINE
 var expand = gsap.timeline({});
 
-expand.to(".book-wrapper", {zIndex: 12, duration: 0}, 0)
+expand.to(".book-wrapper", {duration: 0}, 0)
 expand.to(".book-wrapper", {height: "100%", paddingTop: "20px"}, 0)
 
 // EXPAND BOOK WINDOW
@@ -91,12 +91,16 @@ function handleDeviceChange(e) {
 }
 
 function activeLeft() {
-    showX();
+    showX()
+    gsap.to('#navigation', {opacity: 0, duration: 0.6})
+    navigationOnClick.reverse()
     left = false;
 }
 
 function activeRight() {
-    showX();
+    showX()
+    gsap.to('#navigation', {opacity: 0, duration: 0.6})
+    navigationOnClick.reverse()
     right = false;
 }
 
@@ -108,6 +112,7 @@ function checkLeft() {
         
         hideX();
         expand.reverse();
+        gsap.to('#navigation', {opacity: 1, duration: 0.6})
     }
 }
 
@@ -119,6 +124,7 @@ function checkRight() {
         
         hideX();
         expand.reverse();
+        gsap.to('#navigation', {opacity: 1, duration: 0.6})
     }
 }
 
