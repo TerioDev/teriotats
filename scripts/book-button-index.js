@@ -8,6 +8,6 @@ $('.book-button').click (function (e) {
         book.to(".book-overlay", {opacity: 1, duration: 0.2}, 0)
         book.to(".book-overlay", {opacity: 0, duration: 0.2}, 0.6)
 
-        view1.timeScale(4).reverse()
+        view1.timeScale(3.5).reverse()
         navigationOnClickMobile.timeScale(3).reverse()
 });
