@@ -107,6 +107,8 @@
     height: 70px;
 }
 
+.info-show-less img {height: 90px;}
+
 .info-button-sub, .info-button-sub-mobile {
     /* button */
     box-sizing: border-box;

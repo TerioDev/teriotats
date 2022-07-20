@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 //! ceate a timeline for view1
 var view1 = gsap.timeline({onReverseComplete: reverseFunction});
 
-    view1.fromTo('.typ1', {opacity: 0}, {opacity: 1, duration: 0.4})
+    view1.fromTo('.typ1', {opacity: 0}, {opacity: 1, duration: 0.3}, 0.1)
     view1.to(".typ2", {opacity: 1, duration: 1.9, ease: "power2.in"}, 0.4)
     view1.to(".typ2r", {opacity: 1, duration: 1.9,  ease: "power2.in"}, 0.4)
     view1.to(".typ1", {opacity: 0, duration: 0.1}, 2.3)
