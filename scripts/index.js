@@ -13,8 +13,8 @@ var view1 = gsap.timeline({onReverseComplete: reverseFunction});
 //! separate timeline for navigation so it doesn't reverse on reload
 var view1Navigation = gsap.timeline({});
 
-view1Navigation.fromTo("#navigation", {y: -160}, {y:0, duration: 1.5, ease: "elastic.out(0.8, 0.5)"}, 0.8)
-view1Navigation.fromTo("#mobile-navigation-wrap", {y: -160}, {y:0, duration: 1.5, ease: "elastic.out(0.8, 0.5)"}, 0.8)
+view1Navigation.fromTo("#navigation", {y: -160, opacity: 1}, {y:0, duration: 1.5, ease: "elastic.out(0.8, 0.5)"}, 0.8)
+view1Navigation.fromTo("#mobile-navigation-wrap", {y: -160, opacity: 1}, {y:0, duration: 1.5, ease: "elastic.out(0.8, 0.5)"}, 0.8)
 
 //! function for callback from view1 timeline
 function reverseFunction()

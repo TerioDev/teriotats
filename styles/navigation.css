@@ -8,6 +8,7 @@
     position: relative;
     top: 0;
     z-index: 9;
+    opacity: 0;
 
     /* flex */
     display: flex;
@@ -236,6 +237,7 @@
 #mobile-navigation-wrap {
     display: none;
     position: relative;
+    opacity: 0;
 
     /* navigation box */
     width: 100%;
@@ -284,6 +286,7 @@
     width: 100%;
     height: 0%;
     background-color: #F99C19;
+    opacity: 0;
 }
 
 .info-button-sub-mobile {
@@ -308,6 +311,7 @@
 }
 
 #mobile-book-button {
+    opacity: 0;
     height: 80px;
 }
 

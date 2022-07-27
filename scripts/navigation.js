@@ -1,10 +1,8 @@
 gsap.registerPlugin(CSSPlugin);
 
-/* SUBMENU */ 
+//! DESKTOP
 
-/* DESKTOP */
-
-/* VARIABLE FOR SWITCHING */
+//! Variable for switching 
 var indicator = false;
 
 var navigationOnClick = gsap.timeline({paused: true})
@@ -16,7 +14,7 @@ navigationOnClick.fromTo(".info-show-less", {y: -90, opacity: 1}, {y: 0, duratio
 navigationOnClick.to(".info-text", {y: 90, duration: 0.8, ease: "power2.easeOut"}, 0)
 navigationOnClick.fromTo(".info-button-sub", {y: "-80px", opacity: 0}, {y: "0px", opacity: 1, duration: 0.6, ease: "power2.easeOut"}, 0.2)
 
-/* This turns on extended sub menu on clicking info button */
+//! This turns on extended sub menu on clicking info button
 $("#info").click(function() {
 
     if (indicator === false) { 
@@ -42,6 +40,7 @@ $("#info").click(function() {
 var navigationOnClickMobile = gsap.timeline({paused: true})
 
 navigationOnClickMobile.to('#mobile-navigation-wrap', {zIndex: 13, duration: 0}, 0)
+navigationOnClickMobile.to(".mobile-menu-background", {opacity: 1, duration: 0}, 0)
 navigationOnClickMobile.to(".mobile-menu-background", {height: "100vh", duration: 1, ease: "power2.easeOut"}, 0)
 navigationOnClickMobile.fromTo("#sub1", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.10)
 navigationOnClickMobile.fromTo("#sub2", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.15)
