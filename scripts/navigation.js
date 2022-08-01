@@ -43,11 +43,11 @@ navigationOnClickMobile.to('#mobile-navigation-wrap', {zIndex: 13, duration: 0},
 navigationOnClickMobile.to(".mobile-menu-background", {opacity: 1, duration: 0}, 0)
 navigationOnClickMobile.to(".mobile-menu-background", {height: "100vh", duration: 1, ease: "power2.easeOut"}, 0)
 navigationOnClickMobile.fromTo("#sub1", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.10)
-navigationOnClickMobile.fromTo("#sub2", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.15)
-navigationOnClickMobile.fromTo("#sub3", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.22,5)
+navigationOnClickMobile.fromTo(".switch-wrap", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.17)
+navigationOnClickMobile.fromTo("#sub3", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.22)
 navigationOnClickMobile.fromTo("#sub4", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.30)
 navigationOnClickMobile.fromTo("#sub5", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.40)
-navigationOnClickMobile.fromTo("#mobile-book-button", {y:-40, opacity: 0}, {y:0, opacity: 1, duration: 0.5}, 0.5,25)
+navigationOnClickMobile.fromTo("#mobile-book-button", {y:-40, opacity: 0}, {y:0, opacity: 1, duration: 0.5}, 0.22)
 /* navigationOnClickMobile.fromTo("#show-less-button", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.8) */
 
 navigationOnClickMobile.to(".shadow", {duration: 0, PointerEvents: "none"}, 0)
@@ -60,7 +60,7 @@ if (mediaQuery.matches) {
     navigationOnClickMobile.fromTo(".info-show-less", {y: -90, opacity: 1}, {y: 0, duration: 0.8, ease: "power2.easeOut"}, 0)
     navigationOnClickMobile.to(".info-text", {y: 90, duration: 0.8, ease: "power2.easeOut"}, 0)
   } else {
-    navigationOnClickMobile.fromTo(".info-show-less", {y: -50, opacity: 1}, {y: -15, duration: 0.8, ease: "power2.easeOut"}, 0)
+    navigationOnClickMobile.fromTo(".info-show-less", {y: -90, opacity: 1}, {y: -15, duration: 0.8, ease: "power2.easeOut"}, 0)
     navigationOnClickMobile.to(".info-text", {y: 90, duration: 0.8, ease: "power2.easeOut"}, 0)
   }
 
@@ -84,3 +84,10 @@ $("#menu").click(function() {
     indicator = false;
 
 }})
+
+//! LINKS
+$('#home').on('click', function() { location.href = 'index.html' });
+
+// $('#home').on('click', function() { location.href = 'https://terio.ink/' });
+
+// $('#home').on('click', function() { location.href = 'https://terio.ink/'});

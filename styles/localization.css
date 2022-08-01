@@ -1,0 +1,189 @@
+/*! ICONS */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+#cancel {
+    position: absolute;
+    opacity: 0;
+}
+
+/*! SELECT PURE */
+select-pure {
+    --select-height: 80px;
+    --select-width: 200px;
+    --border-radius: 45px;
+    --border-width: 5px;
+    --border-color: #3d2606;
+    --padding: 0 30px;
+    --dropdown-z-index: 6;
+    --disabled-background-color: #f99c19;
+    --disabled-color: #3d2606;
+    --background-color: #f9e2c3;
+    --color: #3d2606;
+    --hover-background-color: #f9cf92;
+    --hover-color: #3d2606;
+    --selected-background-color: #f99c19;
+    --selected-color: #3d2606;
+    --dropdown-gap: 10px;
+    --font-size: 18px;
+    --font-family: Encode 'sans';
+    --font-weight: 700;
+    --select-outline: none;
+    --dropdown-items: 2;
+    --overflow-y: auto;
+}
+
+/*! Switch wrap */
+
+.switch-wrap {
+    position: relative;
+    overflow: hidden;
+
+    /* button */
+    box-sizing: border-box;
+    width: 300px;
+    height: 100px;
+    background: #FAE1C3;
+    border: 5px solid #f9e2c3;
+    border-radius: 60px;
+    cursor: pointer;
+    overflow: hidden;
+
+    /* font */
+    font-family: 'Fascinate';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 58px;
+    color: #f9e2c3;
+    text-align: center;
+}
+
+.switchlang {
+    outline: none;
+    background-color: transparent;
+    border-radius: 100px;
+    border: none;
+    color: #f9e2c3;
+    top: 0;
+    left: 40px;
+    font-family: fascinate;
+    font-size: 50px;
+    line-height: 90px;
+    width: 290px;
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+}
+
+#public {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 10px;
+    left: 12.5px;
+    border-radius: 100px;
+    font-size: 70px !important;
+    padding: 0;
+    border: none;
+    color: #f9e2c3;
+    text-align: center;
+    line-height: 70px;
+    pointer-events: none;
+    transform: scale(1.4);
+}
+
+@media only screen and (min-device-width: 801px) and (max-width: 1400px) {
+
+    #mobile-book-button {width: 300px;}
+
+    .switch-wrap {width: 300px; height: 80px;}
+
+    .switchlang {font-size: 50px !important; line-height: 70px; width: 240px;}
+
+    #public {font-size: 50px !important; padding: 0 !important; top: 0px; left: 0px;} 
+
+    .info-button {width: 300px; font-size: 46px;}
+
+    .info-button-sub {width: 300px; font-size: 46px;}
+
+    .switch-wrap {z-index: 6;}
+
+    .info-text {font-size: 46px;}
+
+    .book-btn-inner {transform: scale(0.9);width: 100%;height: 100%;display: flex;align-items: center;align-content: center;justify-content: center;}
+
+    #eyes {
+        width: 250px; /* same as button width without a border */
+        height: 90px; /* modify this when resizing button height */
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .switch-wrap {
+        height: 80px;
+    }
+
+    .switchlang {
+        font-size: 46px;
+        line-height: 70px;
+    }
+
+    #public {
+        font-size: 55px !important;
+        top: 1px;
+        left: 5px;
+    }
+
+    #navigation-wrap {
+        display: none;
+    }
+
+    .switch-wrap {z-index: 20;}
+
+    #mobile-navigation-wrap {
+        display: flex;
+    }
+
+    .info-button {
+        margin-top: 20px;
+    }
+
+}
+
+@media only screen and (max-height: 660px) {
+    
+    #mobile-book-button {width: 260px; height: 60px;}
+
+    .switch-wrap {width: 260px; height: 60px;}
+
+    .switchlang {font-size: 32px !important; line-height: 45px; width: 200px;}
+
+    #public {font-size: 38px !important; padding: 0 !important; top: -10px; left: -5px;} 
+
+    #menu {width: 260px; height:60px;}
+
+    #menu > .info-text {font-size: 32px; height: 70px;}
+
+    #menu > .info-show-less img {height: 50px;}
+
+    .info-show-less {height: 50px;}
+
+    .info-button-sub-mobile {height: 60px; width: 260px; font-size: 46px; font-size: 32px; line-height: 50px;}
+
+    .mbl-book-btn-wrp {transform: scale(0.6);width: 100%;height: 100%;display: flex;align-items: center;align-content: center;justify-content: center;}
+
+    #eyes {
+        width: 250px; /* same as button width without a border */
+        height: 50px; /* modify this when resizing button height */
+    }
+
+    .book-wrapper {
+        height: calc(100% - 100px);
+    }
+}

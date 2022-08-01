@@ -27,11 +27,11 @@ ScrollTrigger.create({
 })
 
 function showX() {
-    gsap.to(".x, .x img", {opacity: 1, pointerEvents: "auto", zIndex: 6, duration: 1})
+    gsap.to(".x, .x img", {opacity: 1, pointerEvents: "auto", zIndex: 6, duration: 0.5})
 }
 
 function hideX() {
-    gsap.to(".x, .x img", {opacity: 0, pointerEvents: "none", duration: 1})
+    gsap.to(".x, .x img", {opacity: 0, pointerEvents: "none", duration: 0.5})
 }
 
 // EXPAND TIMELINE
@@ -130,3 +130,8 @@ function checkRight() {
 
 // Run it initially
 handleDeviceChange(smallDevice);
+
+//TODO: in testing
+//! reset animations when changing location
+$(window).on('unload', function(){expand.seek(0);});
+$(window).on('unload', function(){expand.seek(0);});

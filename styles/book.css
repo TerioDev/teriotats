@@ -34,6 +34,20 @@ textarea:focus, input:focus {color: #F99C19;}
 
 input, select, textarea{color: #F99C19;}
 
+.info-header-pl {
+    margin: 0 40px 0 40px;
+}
+
+/* NAVIGATION */
+
+#navigation {
+    opacity: 1 !important;
+}
+
+#mobile-navigation-wrap {
+    opacity: 1 !important;
+}
+
 /* BACKGROUND GRID */
 
 .grid {
@@ -71,7 +85,8 @@ input, select, textarea{color: #F99C19;}
 
 .book-window {
     background-color: #307C60;
-    width: 100%;
+    width: 1450px;
+    max-width: calc(100% - 40px);
     height: 100%;
     border: 5px solid #F9E2C3;
     position: relative;
@@ -100,6 +115,14 @@ input, select, textarea{color: #F99C19;}
     align-content: center;
     overflow-y: scroll;
     border-right: 3px solid #F9E2C3;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.info::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .info-header {
@@ -116,8 +139,14 @@ input, select, textarea{color: #F99C19;}
 .info-content-line {
     font-weight: 700;
     line-height: 150%;
-    font-size: 22px;
-    padding-top: 20px;
+    font-size: 20px;
+    padding: 20px 10px 0 10px;
+}
+
+.info-content-subline {
+    font-weight: 300;
+    font-size: 20px;
+    font-style: italic;
 }
 
 .info-content-line:first-child {padding-top: 0;}
@@ -153,6 +182,14 @@ input, select, textarea{color: #F99C19;}
     padding: 40px 60px 40px 60px;
     border-left: 2px solid #F9E2C3;
     width: 100%;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.form::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 .form-sub {
@@ -172,6 +209,10 @@ input, select, textarea{color: #F99C19;}
     border-radius: 45px;
     overflow-y: scroll;
     word-break: break-word;
+}
+
+textarea#idea {
+    margin-bottom: 10px;
 }
 
 /* MINIMIZE */
@@ -202,6 +243,39 @@ input[type=text] {
     padding-left: 40px;
     color: #F99C19;
     outline: none;
+}
+
+input[type=email] {
+    width: 100%;
+    height: 70px;
+    border: 0px;
+    border-radius: 200px;
+    background-color: #f9e2c3;
+    padding: 0;
+    margin: 40px 0 10px 0;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding-left: 40px;
+    color: #F99C19;
+    outline: none;
+}
+
+input[type=submit] {
+    width: 100%;
+    height: 70px;
+    border: 0px;
+    border-radius: 200px;
+    background-color: #e34e6e;
+    border: 5px solid #f9e2c3;
+    padding: 0;
+    margin: 40px 0 10px 0;
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #f9e2c3;
+    outline: none;
+    cursor: pointer;
 }
 
 input[type=file] {
@@ -308,8 +382,38 @@ input[type="file"] {display: none;}
 
 #name {margin-top: 10px;}
 
+.multiple {padding-top: 14px;}
+
 @media only screen and (max-width: 800px) {
 
+    /* ! inputs */
+
+    input[type=text] {
+        height: 60px;
+    }
+
+    input[type=email] {
+        height: 60px;
+        padding-left: 32px;
+    }
+
+    #idea {
+        height: 50px;
+    }
+
+    #idea {
+        min-height: 120px;
+    }
+
+    textarea#idea {
+        margin-bottom: 2px;
+        padding-top: 18px;
+    }
+
+    input[type=submit] {
+        height: 60px;
+    }
+        
     /* FORM */
 
     .form {
@@ -322,7 +426,7 @@ input[type="file"] {display: none;}
         display: block;
         border-left: 0px;
         margin: 0;
-        padding: 14px 24px 14px 24px;
+        padding: 16px 24px 16px 24px;
 
         grid-area: "info";
     }
@@ -333,11 +437,19 @@ input[type="file"] {display: none;}
 
     /* extend book wrapper up when navbar is smaller to fill the space*/
 
-    .book-wrapper {height: calc(100% - 120px);}
+    .book-wrapper {height: calc(100% - 120px); padding: 0 0 20px 0;}
+
+    /*! info */
 
     #info-content {padding: 20px 24px 20px 24px; text-align: center;}
 
     .info-content-line {font-size: 16px;}
+    
+    .info-content-subline {font-size: 14px;}
+
+    .multiple {
+        display: none;
+    }
 
     .book-window {
         display: block;
@@ -393,4 +505,16 @@ input[type="file"] {display: none;}
         right: 5px;
     }
 
+}
+
+@media only screen and (max-width: 600px) {
+input[type=text] {
+    font-size: 18px;
+    padding-left: 30px;
+}
+
+#idea {
+    font-size: 18px;
+    padding-left: 30px;
+}
 }

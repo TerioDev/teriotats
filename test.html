@@ -1,46 +1,329 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
+
+<head>
+
     <meta charset='utf-8' />
 
+    <!--* GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!--* FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300;400;500;600;700;800;900&family=Fascinate&display=swap" rel="stylesheet"> 
+
+    <!--* GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+    <!--* SCRIPTS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href='fullcalendar/main.css' rel='stylesheet' />
+
+    <!--* FULLCALENDAR -->
     <link href='fullcalendar/main.min.css' rel='stylesheet' />
-    <script src='fullcalendar/main.js'></script>
     <script src='fullcalendar/main.min.js'></script>
     <script type='text/javascript' src='fullcalendar/gcal.js'></script>
 
     <script>
+        var MyDate = new Date();
+        var MyDateString;
 
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
-        });
-        calendar.render();
-      });
+        //debug
+        //MyDate.setDate(MyDate.getDate() - 60);
 
+        MyDateString = MyDate.getFullYear() + '-' + ('0' + (MyDate.getMonth()+4)).slice(-2) + '-' + ('0' + MyDate.getDate()).slice(-2);
+
+        console.log(MyDateString)
     </script>
 
     <script>
-        var calendar = new FullCalendar.Calendar(calendarEl, {});
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+
+                firstDay: 1, //set first day to monday
+                expandRows: false, // rows will not expand when adding events
+
+                googleCalendarApiKey: 'AIzaSyD5AEjgFTCkw0YtsiF4oE7C7N6ycZV-AX4',
+
+                validRange: function(nowDate) {
+                    return {
+                        start: nowDate,
+                        end: MyDateString
+                    };
+                },
+
+                events: [
+                    // my event data
+                ],
+                eventColor: '#F99C19',
+                eventTextColor: '#3D2606',
+
+                eventSources: [
+                    {
+                        googleCalendarId:'ucjrld5vahp3c5q1nq28tje89k@group.calendar.google.com',
+                        className: 'available',
+                        display: 'background'
+                    },
+                    {
+                        googleCalendarId:'qrnihorbtq1se68q6aa1os8qoc@group.calendar.google.com',
+                        className: 'busy',
+                        display: 'background'
+                    },
+                    {
+                        googleCalendarId: '1vs7j3ub3n3m3h91djgriv7o2g@group.calendar.google.com',
+                        className: 'spotevent',
+                        eventTextColor: '#3d2606'
+                    }
+                ],
+
+            });
+            calendar.render();
+        });
+
     </script>
 
-    <script type='text/javascript'>
+    <style>
 
-        $(function() {
-        $('#calendar').fullCalendar({
-            googleCalendarApiKey: '<AIzaSyD5AEjgFTCkw0YtsiF4oE7C7N6ycZV-AX4>',
-            events: {
-            googleCalendarId: 'ucjrld5vahp3c5q1nq28tje89k@group.calendar.google.com'
-            }
-        });
-        });
+    /* GLOBAL PROPERTIES */
+
+    * {box-sizing: border-box;}
+
+    ::-moz-selection {/* Code for Firefox */ color: #f9e2c3; background: #e34e6e;}
+
+    ::selection {color: #f9e2c3; background: #e34e6e;}
+
+    ::-webkit-scrollbar {width: 0; /* Remove scrollbar space */ background: transparent; /* Optional: just make scrollbar invisible */}
+
+    a {-o-transition: .5s; -ms-transition: .5s; -moz-transition: .5s; -webkit-transition: .5s; transition: .5s;}
+
+    /* BACKGROUND GRID */
+
+    .grid {
+        background-image: url("design/sq.png");
+        background-size: cover;
+        background-position: center top;
+        opacity: 0.8;
+
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+        .fc-bg-event .fc-event .fc-bg {
+        z-index: -1 !important;
+        opacity: 0 !important;
+        display: none !important;
+        }
+
+        .available {
+            background:#307C60 !important; color:#f9e2c3 !important;
+        }
+
+        .busy {
+            background:#D2222F !important; color:#f9e2c3 !important;
+        }
+
+        .spotevent {
+            background-color: #f99c19;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-weight: 700;
+        }
+
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f99c19;
+        }
+
+        button:hover, button:focus {
+            outline: none;
+        }
+
+        #calendar-wrap-outer {
+            width: 100%;
+            height: 100vh;
+
+            /* flex */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        #calendar-wrap-inner {
+            background-color: #f9e2c3;
+            border: 5px solid #3d2606;
+            width: calc(100% - 40px);
+            max-width: 1450px;
+            height: calc(100% - 40px);
+            position: relative;
+            border-radius: 40px;
+            overflow: hidden;
+
+            /* flex */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        #calendar-overlay {
+            position: absolute;
+            bottom: 20px;
+            background-color: #f9e2c3;
+            border: 5px solid #3d2606;
+            border-radius: 100px;
+            width: 400px;
+            height: 100px;
+            z-index: 10;
+            opacity: 1;
+
+            /* flex */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        #calendar-overlay img {
+            width: 80px;
+        }
+
+        .calendar-overlay-text {
+            font-family: 'Encode Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            padding-left: 20px;
+            width: 60%;
+            text-align: center;
+        }
+
+        #calendar {
+            font-family: 'Encode Sans', sans-serif;
+            width: 100%;
+            height: 100%;
+            border: none !important;
+        }
+
+        .fc-toolbar-title {
+            font-weight: 800;
+        }
+
+        .fc-scrollgrid {
+            border-color: #e3cdad !important;
+        }
         
-        </script>
+        .fc-scrollgrid-liquid {
+            border-color: #e3cdad !important;
+        }
 
-  </head>
-  <body>
-    <div id='calendar'></div>
-  </body>
+        .fc-daygrid-day {
+            border-color: #e3cdad !important;
+        }
+
+        .fc-col-header-cell {
+            border-color: #e3cdad !important;
+        }
+
+        .fc-daygrid-day-number {
+            font-weight: 600;
+            color: #846d4e;
+        }
+
+        .fc-header-toolbar {
+            padding-top: 12px;
+            margin-bottom: -12px;
+            background-color: #3d2606;
+            border-bottom: 5px solid #3d2606;
+        }
+
+        .fc-toolbar.fc-header-toolbar {
+            padding-bottom: calc(1.5em - 12px) !important;
+            margin-bottom: 0 !important;
+        }
+
+        .fc-toolbar {
+            padding-left: 40px;
+            padding-right: 20px;
+        }
+
+        .fc-prev-button {
+            border-top-left-radius: 20px !important;
+            border-bottom-left-radius: 20px !important;
+        }
+
+        .fc-next-button {
+            border-top-right-radius: 20px !important;
+            border-bottom-right-radius: 20px !important;
+        }
+
+        .fc-button {
+            background-color: #f99c19 !important;
+            border-color: #c6780a !important;
+        }
+
+        .fc .fc-button-primary .fc-today-button .fc-button .fc .fc-button .fc-button:hover .fc-button:active .fc-button:focus .fc-next-button .fc-next-button:hover .fc-next-button:active .fc-next-button:focus .fc-prev-button .fc-prev-button:hover .fc-prev-button:active .fc-prev-button:focus {
+            outline: none !important;
+            color: #f9e2c3 !important;
+        }
+
+        .fc-toolbar-title {
+            color: #f99c19;
+        }
+
+        .fc-col-header-cell {
+            color: #846d4e;
+            font-weight: 800;
+        }
+
+        .fc-daygrid-event {
+            padding: 3px 5px 3px 5px;
+            font-size: 12px;
+            margin-left: 4px !important;
+            margin-right: 4px !important;
+            margin-bottom: 1px; 
+            color: #3d2606 !important;
+        }
+
+        .fc-daygrid-event-harness .fc-daygrid-event-harness-abs {
+            color: #3d2606 !important;
+        }
+
+        .fc-day-today {
+            background-color: var(--fc-today-bg-color,rgba(249, 156, 25, 0.4)) !important;
+        }
+
+        .fc-day-disabled {
+            background-color: rgba(167, 138, 100, 0.3) !important;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="grid"></div>
+
+    <div id="calendar-wrap-outer">
+        <div id="calendar-wrap-inner">
+            <div id="calendar-overlay">
+                <img src="design/loading.gif">
+                <div class="calendar-overlay-text">Loading events might take few seconds.</div>
+            </div>
+            <div id='calendar'></div>
+        </div>
+    </div>
+
+    <!--* ANIMATION -->
+    <script type='text/javascript' src='scripts/calendar.js'></script>
+
+</body>
+
 </html>

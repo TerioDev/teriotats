@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+.hide { display:none; }
+
 #navigation {
     /* navigation box */
     width: 100%;
@@ -63,16 +65,31 @@
     border-radius: 60px;
     cursor: pointer;
     z-index: 13;
+    transition: all 0.3s ease;
 
     /* font */
     font-family: 'Fascinate';
     font-style: normal;
     font-weight: 900;
-    font-size: 58px;
+    font-size: 50px;
     line-height: 90px;
     color: #3C2606;
     text-align: center;
 }
+
+/* TODO: Button hover effects */
+/* .info-button:hover {
+    background-color: #ee9199;
+    color: #d2222f;
+    border: 5px solid #d2222f;
+}
+
+.info-button:active {
+    background-color: #d2222f;
+    color: #ee9199;
+    border: 5px solid #ee9199;
+    transition: all 0s ease;
+} */
 
 #info {
     position: relative;
@@ -94,7 +111,7 @@
     position: absolute;
     top:0;
 
-    font-size: 58px;
+    font-size: 50px;
     line-height: 90px;
 }
 
@@ -184,6 +201,17 @@
     /* aligns book button to the right for pc - remove for mobile */
 }
 
+/* TODO: Button hover effects */
+/* .book-button:hover {
+    background-color: #8aa218;
+    color: #ee9199;
+    border: 5px solid #ee9199;
+}
+
+.book-button:hover .ball {
+    background-color: #8aa218;
+} */
+
 .book-button img {
     height: 90px;
     width: auto;
@@ -192,6 +220,20 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
+}
+
+.book-btn-inner-img {
+    width: 300px;
+    height: 100px;
+}
+
+.book-btn-inner-img-pl {
+    width: 300px;
+    height: 100px;
+}
+
+.book-btn-inner-img-pl img {
+    height: 90px !important;
 }
 
 /* ANIMATED EYES */
@@ -331,11 +373,15 @@
 
 @media only screen and (min-device-width: 801px) and (max-width: 1400px) {
 
-    .book-button {width: 260px;}
+    .book-btn-inner-img img {
+        height: 100px !important;
+    }
 
-    .info-button {width: 260px; font-size: 46px;}
+    #mobile-book-button {width: 300px;}
 
-    .info-button-sub {width: 260px; font-size: 46px;}
+    .info-button {width: 300px; font-size: 46px;}
+
+    .info-button-sub {width: 300px; font-size: 46px;}
 
     .info-text {font-size: 46px;}
 
@@ -348,6 +394,11 @@
 }
 
 @media only screen and (max-width: 800px) {
+
+    
+.book-btn-inner-img img {
+    height: 100px !important;
+}
 
     #navigation-wrap {
         display: none;
@@ -372,6 +423,7 @@
 
 @media only screen and (max-height: 660px) {
     
+    
     #mobile-book-button {width: 260px; height: 60px;}
 
     #menu {width: 260px; height:60px;}
@@ -389,5 +441,9 @@
     #eyes {
         width: 250px; /* same as button width without a border */
         height: 50px; /* modify this when resizing button height */
+    }
+
+    .book-wrapper {
+        height: calc(100% - 100px);
     }
 }
