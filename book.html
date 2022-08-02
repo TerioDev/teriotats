@@ -108,7 +108,9 @@
 
                 <div class="info-button-sub switch-wrap" id="switch-pc">
                     <button id="switchlang" class='switchlang' data-lang=""></button>
-                    <span class="material-symbols-outlined" id="public">language</span>
+                    <div class="public-wrap">
+                       <span class="material-symbols-outlined" id="public">language</span>
+                    </div>
                 </div>
 
             </div>
@@ -141,8 +143,11 @@
 
                 <!-- TODO: Disabled subpages because they are not ready
                 <div class="info-button-sub">info</div>
-                <div class="info-button-sub">home</div>
+                <div class="info-button-sub">
+                </div>
                 <div class="info-button-sub">about</div> -->
+
+
         
         <div class="book-button" id="mobile-book-button">
             <div class="mbl-book-btn-wrp">
@@ -167,7 +172,9 @@
 
         <div class="info-button switch-wrap" id="switch-mobile">
             <button id="switchlang" class='switchlang' data-lang=""></button>
-            <span class="material-symbols-outlined" id="public">language</span>
+            <div class="public-wrap">
+                <span class="material-symbols-outlined" id="public">language</span>
+            </div>
         </div>
 
     </div>
@@ -321,13 +328,13 @@
                         </div>
 
                         <label for="fileInput" class="custom-file-upload"></label>
-                        <input id="fileInput" type="file" accept=".gif,.jpg,.jpeg,.png" name="fileInput">
+                        <input type="file" id="fileInput" name="file" accept="image/*" enctype="multipart/form-data" multiple >
                         <div id="fileuploadspan"></div>
 
                     </label>
 
                     <!--! input file -->
-                    <input type="file" id="inspo" name="file" accept=".gif,.jpg,.jpeg,.png" multiple>
+                    <input type="file" id="inspo" name="file" accept="image/*" enctype="multipart/form-data" multiple>
                     <div class="form-sub">
                         <span data-en="Max. 3 files, 3 MB each." 
                         data-pl="Max. 3 pliki, 3 MB każdy."></span>

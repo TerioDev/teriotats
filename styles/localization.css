@@ -80,12 +80,22 @@ select-pure {
     text-align: center;
 }
 
+.public-wrap {
+    width: 93px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-content: center;
+    padding: 0 12.5px 0 12.5px;
+    margin-top: -5px;
+}
+
 #public {
     height: 70px;
     width: 70px;
-    position: absolute;
-    top: 10px;
-    left: 12.5px;
     border-radius: 100px;
     font-size: 70px !important;
     padding: 0;
@@ -98,15 +108,27 @@ select-pure {
 }
 
 @media only screen and (max-height: 660px) {
-    #public {font-size: 50px !important; left: 2px; top: 0;}
+
+    #public {font-size: 50px !important;}
+
 }
 
-@media only screen and (max-width: 800px) {
-    #public {font-size: 50px !important; left: 2px; top: 0;}
+@media only screen and (max-width: 850px) {
+
+    #public {font-size: 50px !important;}
+
+    .public-wrap {
+        height: 80px !important;
+        width: 75px;
+        padding-right: 3px;
+        padding-left: 0;
+    }
+
     #switchlang {
         height: 70px;
-        width: 240px;
+        width: 280px;
         line-height: 70px;
         font-size: 40px;
     }
+
 }

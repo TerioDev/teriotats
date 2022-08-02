@@ -406,12 +406,18 @@ input[type="file"] {display: none;}
 
 .multiple {padding-top: 14px;}
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
+
+    /*! header */
+
+    .info-header-pl {
+        margin: 0 20px 0 20px;
+    }
 
     /*! icons */
     .icons {
         width: 100%;
-        height: 80px;
+        height: 60px;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -421,6 +427,10 @@ input[type="file"] {display: none;}
         margin-top: 30px;
         margin-bottom: 20px;
     
+    }
+
+    #calendar-icon {
+        font-size: 73px !important;
     }
 
     /*! inputs */
