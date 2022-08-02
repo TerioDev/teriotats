@@ -49,6 +49,28 @@ input, select, textarea{color: #F99C19;}
 }
 
 /* BACKGROUND GRID */
+.icons {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    margin-top: 40px;
+
+}
+
+#calendar-icon {
+    font-size: 95px !important;
+    cursor: pointer;
+}
+
+.icons img {
+    max-height: 100%;
+    cursor: pointer;
+}
 
 .grid {
     background-image: url("../design/sq.png");
@@ -386,7 +408,22 @@ input[type="file"] {display: none;}
 
 @media only screen and (max-width: 800px) {
 
-    /* ! inputs */
+    /*! icons */
+    .icons {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 10px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    
+    }
+
+    /*! inputs */
 
     input[type=text] {
         height: 60px;

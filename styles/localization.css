@@ -97,93 +97,16 @@ select-pure {
     transform: scale(1.4);
 }
 
-@media only screen and (min-device-width: 801px) and (max-width: 1400px) {
-
-    #mobile-book-button {width: 300px;}
-
-    .switch-wrap {width: 300px; height: 80px;}
-
-    .switchlang {font-size: 50px !important; line-height: 70px; width: 240px;}
-
-    #public {font-size: 50px !important; padding: 0 !important; top: 0px; left: 0px;} 
-
-    .info-button {width: 300px; font-size: 46px;}
-
-    .info-button-sub {width: 300px; font-size: 46px;}
-
-    .switch-wrap {z-index: 6;}
-
-    .info-text {font-size: 46px;}
-
-    .book-btn-inner {transform: scale(0.9);width: 100%;height: 100%;display: flex;align-items: center;align-content: center;justify-content: center;}
-
-    #eyes {
-        width: 250px; /* same as button width without a border */
-        height: 90px; /* modify this when resizing button height */
-    }
+@media only screen and (max-height: 660px) {
+    #public {font-size: 50px !important; left: 2px; top: 0;}
 }
 
 @media only screen and (max-width: 800px) {
-
-    .switch-wrap {
-        height: 80px;
-    }
-
-    .switchlang {
-        font-size: 46px;
+    #public {font-size: 50px !important; left: 2px; top: 0;}
+    #switchlang {
+        height: 70px;
+        width: 240px;
         line-height: 70px;
-    }
-
-    #public {
-        font-size: 55px !important;
-        top: 1px;
-        left: 5px;
-    }
-
-    #navigation-wrap {
-        display: none;
-    }
-
-    .switch-wrap {z-index: 20;}
-
-    #mobile-navigation-wrap {
-        display: flex;
-    }
-
-    .info-button {
-        margin-top: 20px;
-    }
-
-}
-
-@media only screen and (max-height: 660px) {
-    
-    #mobile-book-button {width: 260px; height: 60px;}
-
-    .switch-wrap {width: 260px; height: 60px;}
-
-    .switchlang {font-size: 32px !important; line-height: 45px; width: 200px;}
-
-    #public {font-size: 38px !important; padding: 0 !important; top: -10px; left: -5px;} 
-
-    #menu {width: 260px; height:60px;}
-
-    #menu > .info-text {font-size: 32px; height: 70px;}
-
-    #menu > .info-show-less img {height: 50px;}
-
-    .info-show-less {height: 50px;}
-
-    .info-button-sub-mobile {height: 60px; width: 260px; font-size: 46px; font-size: 32px; line-height: 50px;}
-
-    .mbl-book-btn-wrp {transform: scale(0.6);width: 100%;height: 100%;display: flex;align-items: center;align-content: center;justify-content: center;}
-
-    #eyes {
-        width: 250px; /* same as button width without a border */
-        height: 50px; /* modify this when resizing button height */
-    }
-
-    .book-wrapper {
-        height: calc(100% - 100px);
+        font-size: 40px;
     }
 }

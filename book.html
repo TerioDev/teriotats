@@ -106,7 +106,7 @@
                 <div class="info-button-sub">home</div>
                 <div class="info-button-sub">about</div> -->
 
-                <div class="info-button-sub switch-wrap">
+                <div class="info-button-sub switch-wrap" id="switch-pc">
                     <button id="switchlang" class='switchlang' data-lang=""></button>
                     <span class="material-symbols-outlined" id="public">language</span>
                 </div>
@@ -127,7 +127,7 @@
             <div class="info-text"> <!--* menu -->
 
                 <span data-en="menu" 
-                data-pl="start"></span>
+                data-pl="menu"></span>
 
             </div>
 
@@ -143,11 +143,6 @@
                 <div class="info-button-sub">info</div>
                 <div class="info-button-sub">home</div>
                 <div class="info-button-sub">about</div> -->
-
-                <div class="info-button-sub switch-wrap">
-                    <button id="switchlang" class='switchlang' data-lang=""></button>
-                    <span class="material-symbols-outlined" id="public">language</span>
-                </div>
         
         <div class="book-button" id="mobile-book-button">
             <div class="mbl-book-btn-wrp">
@@ -169,6 +164,11 @@
 
         </div>
         <!-- <div id="show-less-button">x</div> -->
+
+        <div class="info-button switch-wrap" id="switch-mobile">
+            <button id="switchlang" class='switchlang' data-lang=""></button>
+            <span class="material-symbols-outlined" id="public">language</span>
+        </div>
 
     </div>
 
@@ -227,7 +227,10 @@
                         data-pl="Dziękuję :)"></span>
                     </div>
 
-                    
+                    <div class="icons">
+                        <span class="material-symbols-outlined" id="calendar-icon">calendar_month</span>
+                        <img src="design/ig.png" id="ig-icon">
+                    </div>
 
                 </div>
                 <!--! book info end -->

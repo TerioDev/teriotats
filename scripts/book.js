@@ -8,6 +8,16 @@ onLoad.fromTo(".book-wrapper", {y: "140px"}, {y: "0px", duration: 0.8, ease: Bac
 
 onLoad.fromTo(".book-wrapper", {opacity: 0}, {opacity: 1, duration: 1}, 0)
 
+// RELOCATE
+
+$("#calendar-icon").click(function () {
+    window.open($(this).attr("test.html"));
+ });
+
+ $("#ig-icon").click(function () {
+    window.open($(this).attr("www.instagram.com/teriotats"));
+ });
+
 // MINIMIZE TIMELINE
 
 $(".x").on("click",function(){

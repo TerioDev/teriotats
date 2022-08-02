@@ -41,13 +41,14 @@ var navigationOnClickMobile = gsap.timeline({paused: true})
 
 navigationOnClickMobile.to('#mobile-navigation-wrap', {zIndex: 13, duration: 0}, 0)
 navigationOnClickMobile.to(".mobile-menu-background", {opacity: 1, duration: 0}, 0)
-navigationOnClickMobile.to(".mobile-menu-background", {height: "100vh", duration: 1, ease: "power2.easeOut"}, 0)
+navigationOnClickMobile.to(".mobile-menu-background", {height: "100vh", duration: 1}, 0)
 navigationOnClickMobile.fromTo("#sub1", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.10)
-navigationOnClickMobile.fromTo(".switch-wrap", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.17)
+navigationOnClickMobile.fromTo("#mobile-book-button", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.15)
+navigationOnClickMobile.fromTo("#switch-mobile", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.3)
 navigationOnClickMobile.fromTo("#sub3", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.22)
 navigationOnClickMobile.fromTo("#sub4", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.30)
 navigationOnClickMobile.fromTo("#sub5", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.40)
-navigationOnClickMobile.fromTo("#mobile-book-button", {y:-40, opacity: 0}, {y:0, opacity: 1, duration: 0.5}, 0.22)
+
 /* navigationOnClickMobile.fromTo("#show-less-button", {y:-40}, {y:0, opacity: 1, duration: 0.5}, 0.8) */
 
 navigationOnClickMobile.to(".shadow", {duration: 0, PointerEvents: "none"}, 0)
