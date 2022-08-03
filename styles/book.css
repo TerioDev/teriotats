@@ -485,7 +485,6 @@ input[type="file"] {display: none;}
 
     #submit {
         height: 60px;
-        -webkit-appearance: none;
     }
         
     /* FORM */
