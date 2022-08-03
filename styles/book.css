@@ -15,6 +15,35 @@ a:active {color: #F99C19; text-decoration: underline; font-style: italic;}
 
 a {-o-transition: .5s; -ms-transition: .5s; -moz-transition: .5s; -webkit-transition: .5s; transition: .5s;}
 
+
+.insp-wrap {
+    margin: 40px 0 10px 0;
+    padding: 0 20px 0 20px;
+    border-radius: 45px;
+    width:100%;
+    border: 5px solid #f9e2c3;
+    background-color: #4a9076;
+
+    height: 180px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.insp-label img {
+    width: auto;
+    max-height: 120px;
+}
+
+.insp-label {
+    cursor: pointer;
+}
+
 body {
     background-color: #F99C19;
     margin: 0;
@@ -51,7 +80,7 @@ input, select, textarea{color: #F99C19;}
 /* BACKGROUND GRID */
 .icons {
     width: 100%;
-    height: 80px;
+    height: 120px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -374,16 +403,6 @@ input[type="file"] {display: none;}
 
 #discard:hover {background-color: #F99C19;}
 
-.inspo-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    max-height: 165px;
-    overflow: hidden;
-}
-
 .inspo-text-2 {padding: 5px 0 0px 0;}
 
 .inspo-text-2:last-child {padding: 5px 0 10px 0;}
@@ -406,6 +425,15 @@ input[type="file"] {display: none;}
 
 .multiple {padding-top: 14px;}
 
+@media only screen and (min-device-width: 851px) and (max-width: 1400px) {
+
+    .insp-label img {
+        width: auto;
+        max-height: 90px;
+    }
+
+}
+
 @media only screen and (max-width: 850px) {
 
     /*! header */
@@ -417,7 +445,7 @@ input[type="file"] {display: none;}
     /*! icons */
     .icons {
         width: 100%;
-        height: 60px;
+        height: 100px;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -444,16 +472,14 @@ input[type="file"] {display: none;}
         padding-left: 32px;
     }
 
-    #idea {
-        height: 50px;
-    }
 
     #idea {
         min-height: 120px;
+        height: 50px;
     }
 
     textarea#idea {
-        margin-bottom: 2px;
+        margin-bottom: 10px;
         padding-top: 18px;
     }
 

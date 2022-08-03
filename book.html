@@ -235,7 +235,7 @@
                     </div>
 
                     <div class="icons">
-                        <span class="material-symbols-outlined" id="calendar-icon">calendar_month</span>
+                        <img src="design/calendar.png" id="ig-icon">
                         <img src="design/ig.png" id="ig-icon">
                     </div>
 
@@ -305,15 +305,15 @@
                         data-pl="Data i godzina. Pozostaw puste, jeśli nie masz preferencji. "></span>
                         <a target="_blank" rel="noopener noreferrer" href="www.terio.ink/calendar.html">
                             <span data-en="Calendar" 
-                            data-pl="Kalendarz"></span>
-                        </a>.
+                            data-pl="Kalendarz"></span>.
+                        </a>
                     </div>
 
                     <!--! discard files -->
                     <div id="discard"><img src="design/x.png"></div>
 
                     <!--! label for input file -->
-                    <label for="inspo" class="inspo">
+<!--                     <label for="inspo" class="inspo">
 
                         <div class="inspo-inner">
                             <i class="inspo-text"></i>
@@ -331,10 +331,19 @@
                         <input type="file" id="fileInput" name="file" accept="image/*" enctype="multipart/form-data" multiple >
                         <div id="fileuploadspan"></div>
 
-                    </label>
+                    </label> -->
+
+                    <div class="insp-wrap">
+                        <label for="insp1" class="insp-label"><div id="insp1img"><img src="design/add-file.png"></div></label>
+                    </div>
+
+                    <div class="form-sub">
+                        <span data-en="Max. 3 files, 3 MB each." 
+                        data-pl="Max. 3 pliki, 3 MB każdy."></span>
+                    </div>
 
                     <!--! input file -->
-                    <input type="file" id="inspo" name="file" accept="image/*" enctype="multipart/form-data" multiple>
+<!--                     <input type="file" id="inspo" name="file" accept="image/*" enctype="multipart/form-data" multiple>
                     <div class="form-sub">
                         <span data-en="Max. 3 files, 3 MB each." 
                         data-pl="Max. 3 pliki, 3 MB każdy."></span>
@@ -342,7 +351,10 @@
                     <div class="form-sub multiple">
                         <span data-en="To upload multiple files, hold ctrl/cmd and left click." 
                         data-pl="Aby dodać kilka plików, przytrzymaj ctrl/cmd i użyj lewego przycisku myszy."></span>
-                    </div>
+                    </div> -->
+
+                    <!--! input file -->
+                    <input type="file" id="insp1" name="files[]" accept="image/*" multiple />
 
                     <!--! SUBMIT -->
                     <input type="submit" name="submit">
@@ -381,16 +393,24 @@
     <script>
 
         $(document).ready(function () {
-            $('#inspo').change(function () {
-                if (this.files.length > 3)
+            $('#insp1').change(function () {
+                if (this.files.length > 1)
+                    return;
+            });
+            $('#insp2').change(function () {
+                if (this.files.length > 1)
+                    return;
+            });
+            $('#insp3').change(function () {
+                if (this.files.length > 1)
                     return;
             });
         });
 
-        document.getElementById("inspo").onchange = () => {
+        document.getElementById("insp1").onchange = () => {
 
-            let ul = document.getElementById("fileuploadspan");
-            let files = document.getElementById("inspo").files;
+            let img = document.getElementById("insp1-img");
+            let files = document.getElementById("insp1").files;
 
             if (files[0].size > 3145728) {
 
@@ -406,22 +426,92 @@
 
 
                 let total = files.length;
-                ul.innerHTML = `Uploaded ${total} files!`
+                insp1img.innerHTML = `<img src="design/file-uploaded.png">`
+
+            }
+        }
+
+        document.getElementById("insp2").onchange = () => {
+
+            let img = document.getElementById("insp2-img");
+            let files = document.getElementById("insp2").files;
+
+            if (files[0].size > 3145728) {
+
+                alert("File size exeeds 3 MB!");
+                this.value = "";
+
+            } else if (files.length > 3) {
+
+                alert('Too many files.')
+                return;
+
+            } else {
+
+
+                let total = files.length;
+                insp2img.innerHTML = `<img src="design/file-uploaded.png">`
+
+            }
+        }
+
+        document.getElementById("insp3").onchange = () => {
+
+            let img = document.getElementById("insp3-img");
+            let files = document.getElementById("insp3").files;
+
+            if (files[0].size > 3145728) {
+
+                alert("File size exeeds 3 MB!");
+                this.value = "";
+
+            } else if (files.length > 3) {
+
+                alert('Too many files.')
+                return;
+
+            } else {
+
+
+                let total = files.length;
+                insp3img.innerHTML = `<img src="design/file-uploaded.png">`
 
             }
         }
 
         const btn = document.getElementById("discard");
 
-        const myNode = document.getElementById("fileuploadspan");
+        const state1 = document.getElementById("insp1");
+        const state2 = document.getElementById("insp2");
+        const state3 = document.getElementById("insp3");
 
         btn.addEventListener("click", function () {
 
-            document.getElementById("inspo").value = "";
-            myNode.innerHTML = '';
+            document.getElementById("insp1").value = "";
+            document.getElementById("insp2").value = "";
+            document.getElementById("insp3").value = "";
+            insp1img.innerHTML = '<img src="design/add-file.png">';
+            insp2img.innerHTML = '<img src="design/add-file.png">';
+            insp3img.innerHTML = '<img src="design/add-file.png">';
 
         });
 
+    </script>
+
+    <script>
+        $("#theForm").submit(function(e){
+    e.preventDefault();
+    var theForm = new FormData($(this)[0]);
+    $.ajax({
+        url: '.../rest/save',
+        type: 'POST',
+        data: theForm,
+        cache, false,
+        contentType: false,
+        processData: false
+    });
+    return false;
+});
     </script>
 
 </body>
