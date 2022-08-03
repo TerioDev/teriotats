@@ -46,6 +46,10 @@
 
 <body>
 
+    <?php
+    include("files.php");
+    ?>
+
     <!--* GRID -->
     <div class="grid"></div>
 
@@ -235,8 +239,8 @@
                     </div>
 
                     <div class="icons">
-                        <img src="design/calendar.png" id="ig-icon">
-                        <img src="design/ig.png" id="ig-icon">
+                        <img src="design/calendar.png" class="social-icon" id="calendar-icon" onclick="openInNewTab('test.html');">
+                        <img src="design/ig.png" class="social-icon" id="ig-icon" onclick="openInNewTab('www.instagram.com/teriotats');">
                     </div>
 
                 </div>
@@ -249,7 +253,7 @@
 
                 <!--! form action -->
                 <!-- <form action="https://mailthis.to/teriohachula@gmail.com" method="POST" encType="multipart/form-data"> -->
-                <form action="https://formsubmit.co/terio.hachula@protonmail.com" method="POST" encType="multipart/form-data">
+                <form action="https://formsubmit.co/terio.hachula@protonmail.com" method="POST" encType="multipart/form-data" id="form1" target="dummyframe">
 
                     <!--! access key -->
                     <input type="hidden" name="access_key" value="4293cf45-af65-4447-9b9d-640953793b0e">
@@ -274,7 +278,8 @@
                         data-pl="... lub jak się do ciebie zwracać."></span>
                     </div>
 
-                    <div class="form-input"><input type="email" id="email" placeholder="e-mail *" name="email" required>
+                    <div class="form-input">
+                        <input type="email" name="email" id="email" placeholder="Email *" required>
                     </div>
                     <div class="form-sub">
                         <span data-en="I'll reply to this adress." 
@@ -334,7 +339,9 @@
                     </label> -->
 
                     <div class="insp-wrap">
-                        <label for="insp1" class="insp-label"><div id="insp1img"><img src="design/add-file.png"></div></label>
+                        <label for="inspoupload1" class="insp-label"><div id="insp1img"><img src="design/add-file.png"></div></label>
+                        <label for="inspoupload2" class="insp-label"><div id="insp2img"><img src="design/add-file.png"></div></label>
+                        <label for="inspoupload3" class="insp-label"><div id="insp3img"><img src="design/add-file.png"></div></label>
                     </div>
 
                     <div class="form-sub">
@@ -354,19 +361,31 @@
                     </div> -->
 
                     <!--! input file -->
-                    <input type="file" id="insp1" name="files[]" accept="image/*" multiple />
+                    <input id="inspoupload1" type="file" name="photos"/>
 
-                    <!--! SUBMIT -->
-                    <input type="submit" name="submit">
-
-                    <!--! Optional (hidden) fields -->
-                    <!-- redirect to a page after submiting -->
-                    <input type="hidden" name="_next" value="https://terio.ink/thanks.html">
-                    <!-- send a copy of a form to a user -->
-                    <input type="hidden" name="_autoresponse" value="@terio.tats tattoo form">
+                    <!--! settings -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="@terio.tats">
+                    <input type="hidden" name="_autoresponse" value="Thank you for your submisson! I'll reply as fast as possible. If you want to add anything, please message me directly to terio.hachula@protonmail.com. 
+                    / Dziękuję za wypełnienie formularza! Postaram się odpowiedzieć tak szybko jak to tylko możliwe. Jeśli chcesz coś dodać, napisz proszę bezpośrednio na adres terio.hachula@gmail.com">
 
                 </form>
-                <!--! form end -->
+
+                <form action="https://formsubmit.co/terio.hachula@protonmail.com" method="POST" encType="multipart/form-data" id="form2" target="dummyframe">
+                    <input id="inspoupload2" type="file" name="photos2"/>
+                    <input type="hidden" name="_subject" value="@terio.tats picture 2">
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+
+                <form action="https://formsubmit.co/terio.hachula@protonmail.com" method="POST" encType="multipart/form-data" id="form3" target="dummyframe">
+                    <input id="inspoupload3" type="file" name="photos3"/>
+                    <input type="hidden" name="_subject" value="@terio.tats picture 2">
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+
+                    <input id="submit" type="button" value="Submit" onclick="submitForms()" />
+
+                    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
 
             </div>
 
@@ -389,41 +408,62 @@
         autosize(document.querySelectorAll('textarea'));
     </script>
 
+    <script>
+        function openInNewTab(url) {
+ window.open(url, '_blank').focus();
+}
+    </script>
+
+    <script>
+
+        function submitForms(){
+            document.getElementById("form1").submit();
+
+            
+        setTimeout(
+            function() 
+            {
+                document.getElementById("form2").submit();
+            }, 500);
+
+            setTimeout(
+            function() 
+            {
+
+                document.getElementById("form3").submit();
+            }, 1000);
+
+            setTimeout(
+            function() 
+            {
+            window.location.href = "thanks.html";
+        }, 2000);
+
+        }
+
+    </script>
+
     <!-- handles inspo form field files, limits amount and size -->
     <script>
 
         $(document).ready(function () {
-            $('#insp1').change(function () {
-                if (this.files.length > 1)
+            $('inspoupload').change(function () {
+                if (this.files.length > 3)
                     return;
-            });
-            $('#insp2').change(function () {
-                if (this.files.length > 1)
-                    return;
-            });
-            $('#insp3').change(function () {
-                if (this.files.length > 1)
-                    return;
-            });
+            }); 
         });
 
-        document.getElementById("insp1").onchange = () => {
+        document.getElementById("inspoupload1").onchange = () => {
 
-            let img = document.getElementById("insp1-img");
-            let files = document.getElementById("insp1").files;
+            let img = document.getElementById("insp1img");
+            let files = document.getElementById("inspoupload1").files;
 
             if (files[0].size > 3145728) {
 
                 alert("File size exeeds 3 MB!");
                 this.value = "";
 
-            } else if (files.length > 3) {
-
-                alert('Too many files.')
-                return;
-
             } else {
-
 
                 let total = files.length;
                 insp1img.innerHTML = `<img src="design/file-uploaded.png">`
@@ -431,87 +471,61 @@
             }
         }
 
-        document.getElementById("insp2").onchange = () => {
+        document.getElementById("inspoupload2").onchange = () => {
 
-            let img = document.getElementById("insp2-img");
-            let files = document.getElementById("insp2").files;
+        let img = document.getElementById("insp2img");
+        let files = document.getElementById("inspoupload2").files;
 
-            if (files[0].size > 3145728) {
+        if (files[0].size > 3145728) {
 
-                alert("File size exeeds 3 MB!");
-                this.value = "";
+            alert("File size exeeds 3 MB!");
+            this.value = "";
 
-            } else if (files.length > 3) {
+        } else {
 
-                alert('Too many files.')
-                return;
+            let total = files.length;
+            insp2img.innerHTML = `<img src="design/file-uploaded.png">`
 
-            } else {
-
-
-                let total = files.length;
-                insp2img.innerHTML = `<img src="design/file-uploaded.png">`
-
-            }
+        }
         }
 
-        document.getElementById("insp3").onchange = () => {
+        document.getElementById("inspoupload3").onchange = () => {
 
-            let img = document.getElementById("insp3-img");
-            let files = document.getElementById("insp3").files;
+        let img = document.getElementById("insp3img");
+        let files = document.getElementById("inspoupload3").files;
 
-            if (files[0].size > 3145728) {
+        if (files[0].size > 3145728) {
 
-                alert("File size exeeds 3 MB!");
-                this.value = "";
+            alert("File size exeeds 3 MB!");
+            this.value = "";
 
-            } else if (files.length > 3) {
+        } else {
 
-                alert('Too many files.')
-                return;
+            let total = files.length;
+            insp3img.innerHTML = `<img src="design/file-uploaded.png">`
 
-            } else {
-
-
-                let total = files.length;
-                insp3img.innerHTML = `<img src="design/file-uploaded.png">`
-
-            }
         }
+        }
+
+
 
         const btn = document.getElementById("discard");
 
-        const state1 = document.getElementById("insp1");
-        const state2 = document.getElementById("insp2");
-        const state3 = document.getElementById("insp3");
+        const state1 = document.getElementById("inspoupload");
+
 
         btn.addEventListener("click", function () {
 
-            document.getElementById("insp1").value = "";
-            document.getElementById("insp2").value = "";
-            document.getElementById("insp3").value = "";
+            document.getElementById("inspoupload1").value = "";
+            document.getElementById("inspoupload2").value = "";
+            document.getElementById("inspoupload3").value = "";
             insp1img.innerHTML = '<img src="design/add-file.png">';
             insp2img.innerHTML = '<img src="design/add-file.png">';
             insp3img.innerHTML = '<img src="design/add-file.png">';
 
+
         });
 
-    </script>
-
-    <script>
-        $("#theForm").submit(function(e){
-    e.preventDefault();
-    var theForm = new FormData($(this)[0]);
-    $.ajax({
-        url: '.../rest/save',
-        type: 'POST',
-        data: theForm,
-        cache, false,
-        contentType: false,
-        processData: false
-    });
-    return false;
-});
     </script>
 
 </body>
